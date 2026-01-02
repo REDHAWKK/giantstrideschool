@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission - Giant Stride School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body class="font-sans bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        
+        <!-- Logo -->
+        <div class="flex items-center space-x-4">
+            <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
+            <span class="text-xl font-bold">Giant Stride School</span>
+        </div>
+
+        <!-- Desktop Nav -->
+<div class="hidden lg:flex items-center space-x-8">
+
+
+            <a href="index.html" class="hover:text-orange-200 transition">Home</a>
+            <a href="about.html" class="hover:text-orange-200 transition">About</a>
+            <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
+            <a href="team.html" class="hover:text-orange-200 transition">Our Team</a>
+
+            <!-- NEW “More” Dropdown -->
+            <div class="relative group">
+                <button class="hover:text-orange-200 transition flex items-center">
+                    More
+                    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+                </button>
+
+                <!-- Dropdown menu -->
+                <div class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <a href="news.html" class="block px-4 py-2 hover:bg-green-100">News</a>
+                    <a href="events.html" class="block px-4 py-2 hover:bg-green-100">Events</a>
+                    <a href="blog.html" class="block px-4 py-2 hover:bg-green-100">Blog</a>
+                </div>
+            </div>
+
+            <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
+            <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button id="menu-btn" class="lg:hidden focus:outline-none">
+            <i data-feather="menu" class="text-white h-8 w-8"></i>
+        </button>
+    </div>
+
+<!-- Mobile Dropdown -->
+<div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md md:hidden">
+    <a href="index.html" class="py-2 border-b">Home</a>
+    <a href="about.html" class="py-2 border-b">About</a>
+    <a href="gallery.html" class="py-2 border-b">Gallery</a>
+    <a href="team.html" class="py-2 border-b">Our Team</a>
+
+    <!-- Mobile “More” section -->
+    <details class="py-2 border-b">
+        <summary class="cursor-pointer font-medium">More</summary>
+        <div class="ml-4 mt-2 flex flex-col space-y-2">
+            <a href="news.html" class="hover:text-orange-500">News</a>
+            <a href="events.html" class="hover:text-orange-500">Events</a>
+            <a href="blog.html" class="hover:text-orange-500">Blog</a>
+        </div>
+    </details>
+
+    <a href="contact.html" class="py-2 border-b">Contact</a>
+
+    <a href="admission.html" class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
+        Admission
+    </a>
+</div>
+
+</nav>
+    <!-- Hero Section -->
+    <section class="relative">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <img src="http://static.photos/education/1200x630/27" alt="Admission" class="w-full h-96 object-cover">
+        <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+            <div data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Admission Process</h1>
+                <div class="text-xl text-white">
+                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span class="text-orange-300">Admission</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">How To Apply</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row mb-12" data-aos="fade-up">
+                    <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
+                        <div class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Submit Application</h3>
+                        <p class="text-gray-600">Complete our online application form or visit the school to collect a physical form. Required documents include:</p>
+                        <ul class="list-disc pl-5 mt-3 text-gray-600">
+                            <li>Birth certificate</li>
+                            <li>Recent passport photograph</li>
+                            <li>Previous school report (if applicable)</li>
+                            <li>Medical records</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
+                        <div class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Entrance Assessment</h3>
+                        <p class="text-gray-600">For admission into certain classes, your child will be required to take an age-appropriate assessment to evaluate their readiness. This helps us understand how we can best support their learning journey.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
+                        <div class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Interview</h3>
+                        <p class="text-gray-600">After the assessment, we invite both parents and the prospective student for an interview with our Head of School. This helps us get to know your family better and ensures we're a good fit for each other.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row" data-aos="fade-up" data-aos-delay="300">
+                    <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
+                        <div class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Acceptance & Enrollment</h3>
+                        <p class="text-gray-600">Successful applicants will receive an acceptance letter. To secure your child's place, you'll need to complete the enrollment process by submitting all required documents and paying the necessary fees.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees Structure -->
+    <section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Fees Structure</h2>
+            <div class="max-w-4xl mx-auto overflow-x-auto">
+                <table class="w-full bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <thead class="bg-orange-500 text-white">
+                        <tr>
+                            <th class="py-4 px-6 text-left">Class</th>
+                            <th class="py-4 px-6 text-right">Tuition Fee</th>
+                            <th class="py-4 px-6 text-right">Development Fee</th>
+                            <th class="py-4 px-6 text-right">Total Per Term</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-4 px-6">Nursery 1 & 2</td>
+                            <td class="py-4 px-6 text-right">₦150,000</td>
+                            <td class="py-4 px-6 text-right">₦50,000</td>
+                            <td class="py-4 px-6 text-right font-semibold">₦200,000</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="py-4 px-6">Kindergarten</td>
+                            <td class="py-4 px-6 text-right">₦180,000</td>
+                            <td class="py-4 px-6 text-right">₦50,000</td>
+                            <td class="py-4 px-6 text-right font-semibold">₦230,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6">Primary 1-3</td>
+                            <td class="py-4 px-6 text-right">₦200,000</td>
+                            <td class="py-4 px-6 text-right">₦50,000</td>
+                            <td class="py-4 px-6 text-right font-semibold">₦250,000</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="py-4 px-6">Primary 4-6</td>
+                            <td class="py-4 px-6 text-right">₦220,000</td>
+                            <td class="py-4 px-6 text-right">₦50,000</td>
+                            <td class="py-4 px-6 text-right font-semibold">₦270,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-gray-600 mt-6 text-center" data-aos="fade-up">* All fees are per term. We have three terms in an academic year. Additional fees may apply for extracurricular activities and transportation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarships -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="http://static.photos/education/640x360/28" alt="Scholarship" class="rounded-xl shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Scholarship Opportunities</h2>
+                    <p class="text-gray-600 mb-6">At Giant Stride School, we believe in rewarding excellence and supporting families who demonstrate financial need. We offer several scholarship opportunities:</p>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="award" class="text-orange-500 mr-3 mt-1"></i>
+                            <span><strong>Academic Excellence Scholarship:</strong> For students with outstanding academic records.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="award" class="text-orange-500 mr-3 mt-1"></i>
+                            <span><strong>Talent-Based Scholarship:</strong> For students demonstrating exceptional talent in sports, arts, or other areas.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="award" class="text-orange-500 mr-3 mt-1"></i>
+                            <span><strong>Need-Based Scholarship:</strong> For families who demonstrate financial need.</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="contact.html" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition">
+                            Contact us for scholarship details
+                            <i data-feather="arrow-right" class="ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Why Choose Giant Stride School?</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="book-open" class="text-white h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Holistic Curriculum</h3>
+                    <p class="text-gray-600 text-center">Our curriculum goes beyond academics to develop character, creativity, and critical thinking skills.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="users" class="text-white h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Qualified Teachers</h3>
+                    <p class="text-gray-600 text-center">Our dedicated teachers are highly qualified and passionate about nurturing young minds.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="home" class="text-white h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Safe Environment</h3>
+                    <p class="text-gray-600 text-center">We maintain a secure and nurturing environment where children can thrive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-orange-500 to-green-500 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Ready to Begin the Journey?</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Start your child's educational journey with us today.</p>
+            <div class="space-x-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="contact.html" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition">Apply Now</a>
+                <a href="contact.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-full font-semibold inline-block transition">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
+                    <p class="text-gray-400 mb-4">Providing quality education that shapes tomorrow's leaders today.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
+                        <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Academics</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Curriculum</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Extracurricular</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">School Calendar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Results</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1"></i>
+                            <span>123 Education Road, Learning City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="mr-2"></i>
+                            <span>+234 123 456 7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2"></i>
+                            <span>info@giantstride.edu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Giant Stride School. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

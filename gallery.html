@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Giant Stride School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+</head>
+<body class="font-sans bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        
+        <!-- Logo -->
+        <div class="flex items-center space-x-4">
+            <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
+            <span class="text-xl font-bold">Giant Stride School</span>
+        </div>
+
+        <!-- Desktop Nav -->
+<div class="hidden lg:flex items-center space-x-8">
+
+
+            <a href="index.html" class="hover:text-orange-200 transition">Home</a>
+            <a href="about.html" class="hover:text-orange-200 transition">About</a>
+            <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
+            <a href="team.html" class="hover:text-orange-200 transition">Our Team</a>
+
+            <!-- NEW “More” Dropdown -->
+            <div class="relative group">
+                <button class="hover:text-orange-200 transition flex items-center">
+                    More
+                    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+                </button>
+
+                <!-- Dropdown menu -->
+                <div class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <a href="news.html" class="block px-4 py-2 hover:bg-green-100">News</a>
+                    <a href="events.html" class="block px-4 py-2 hover:bg-green-100">Events</a>
+                    <a href="blog.html" class="block px-4 py-2 hover:bg-green-100">Blog</a>
+                </div>
+            </div>
+
+            <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
+            <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button id="menu-btn" class="lg:hidden focus:outline-none">
+            <i data-feather="menu" class="text-white h-8 w-8"></i>
+        </button>
+    </div>
+
+<!-- Mobile Dropdown -->
+<div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md md:hidden">
+    <a href="index.html" class="py-2 border-b">Home</a>
+    <a href="about.html" class="py-2 border-b">About</a>
+    <a href="gallery.html" class="py-2 border-b">Gallery</a>
+    <a href="team.html" class="py-2 border-b">Our Team</a>
+
+    <!-- Mobile “More” section -->
+    <details class="py-2 border-b">
+        <summary class="cursor-pointer font-medium">More</summary>
+        <div class="ml-4 mt-2 flex flex-col space-y-2">
+            <a href="news.html" class="hover:text-orange-500">News</a>
+            <a href="events.html" class="hover:text-orange-500">Events</a>
+            <a href="blog.html" class="hover:text-orange-500">Blog</a>
+        </div>
+    </details>
+
+    <a href="contact.html" class="py-2 border-b">Contact</a>
+
+    <a href="admission.html" class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
+        Admission
+    </a>
+</div>
+
+</nav>
+    <!-- Hero Section -->
+    <section class="relative">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <img src="images/galley-hero.png" alt="School Gallery" class="w-full h-96 object-cover">
+        <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+            <div data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Our Gallery</h1>
+                <div class="text-xl text-white">
+                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span class="text-orange-300">Gallery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Moments at Giant Stride</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our vibrant school life through these captivating images of daily activities, events, and special moments.</p>
+            </div>
+            
+            <div class="flex justify-center mb-8" data-aos="fade-up">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg bg-orange-500 text-white filter-button" data-filter="all">
+                        All
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button" data-filter="classroom">
+                        Classroom
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button" data-filter="events">
+                        Events
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button" data-filter="sports">
+                        Sports
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button" data-filter="facilities">
+                        Facilities
+                    </button>
+                </div>
+            </div>
+            
+            <div class="gallery grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery">
+                <!-- Classroom Images -->
+                <div class="gallery-item classroom" data-aos="fade-up" data-src="http://static.photos/education/640x360/14" data-sub-html="Students engaged in classroom learning">
+                    <img src="http://static.photos/education/640x360/14" alt="Classroom Learning" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Classroom Learning</div>
+                </div>
+                <div class="gallery-item classroom" data-aos="fade-up" data-aos-delay="100" data-src="http://static.photos/education/640x360/15" data-sub-html="Group work in progress">
+                    <img src="http://static.photos/education/640x360/15" alt="Group Work" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Group Activities</div>
+                </div>
+                
+                <!-- Events Images -->
+                <div class="gallery-item events" data-aos="fade-up" data-aos-delay="200" data-src="http://static.photos/education/640x360/16" data-sub-html="Annual cultural day celebration">
+                    <img src="http://static.photos/education/640x360/16" alt="Cultural Day" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Cultural Day</div>
+                </div>
+                <div class="gallery-item events" data-aos="fade-up" data-aos-delay="300" data-src="http://static.photos/education/640x360/17" data-sub-html="Graduation ceremony">
+                    <img src="http://static.photos/education/640x360/17" alt="Graduation" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Graduation Day</div>
+                </div>
+                
+                <!-- Sports Images -->
+                <div class="gallery-item sports" data-aos="fade-up" data-aos-delay="400" data-src="http://static.photos/education/640x360/18" data-sub-html="Sports day activities">
+                    <img src="http://static.photos/education/640x360/18" alt="Sports Day" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Sports Day</div>
+                </div>
+                <div class="gallery-item sports" data-aos="fade-up" data-aos-delay="500" data-src="http://static.photos/education/640x360/19" data-sub-html="Inter-house sports competition">
+                    <img src="http://static.photos/education/640x360/19" alt="Inter-house Sports" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Inter-house Sports</div>
+                </div>
+                
+                <!-- Facilities Images -->
+                <div class="gallery-item facilities" data-aos="fade-up" data-aos-delay="600" data-src="http://static.photos/education/640x360/20" data-sub-html="School library">
+                    <img src="http://static.photos/education/640x360/20" alt="Library" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">School Library</div>
+                </div>
+                <div class="gallery-item facilities" data-aos="fade-up" data-aos-delay="700" data-src="http://static.photos/education/640x360/21" data-sub-html="Science laboratory">
+                    <img src="http://static.photos/education/640x360/21" alt="Science Lab" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Science Lab</div>
+                </div>
+                <div class="gallery-item facilities" data-aos="fade-up" data-aos-delay="800" data-src="http://static.photos/education/640x360/22" data-sub-html="Computer laboratory">
+                    <img src="http://static.photos/education/640x360/22" alt="Computer Lab" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Computer Lab</div>
+                </div>
+                
+                <!-- More Classroom Images -->
+                <div class="gallery-item classroom" data-aos="fade-up" data-aos-delay="900" data-src="http://static.photos/education/640x360/23" data-sub-html="Art class in session">
+                    <img src="http://static.photos/education/640x360/23" alt="Art Class" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Art Class</div>
+                </div>
+                <div class="gallery-item classroom" data-aos="fade-up" data-aos-delay="1000" data-src="http://static.photos/education/640x360/24" data-sub-html="Music and dance session">
+                    <img src="http://static.photos/education/640x360/24" alt="Music Class" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Music Class</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 bg-gradient-to-r from-green-50 to-orange-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">Experience Our School</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="rounded-xl overflow-hidden shadow-xl" data-aos="fade-right">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-80" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">A Day at Giant Stride</h3>
+                        <p class="text-gray-600">See what a typical day looks like for our students.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl" data-aos="fade-left">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-80" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Annual School Play</h3>
+                        <p class="text-gray-600">Highlights from our much-anticipated annual school play.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-orange-500 to-green-500 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Want to See More?</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Visit our school to experience our vibrant learning environment first-hand.</p>
+            <a href="contact.html" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition" data-aos="fade-up" data-aos-delay="200">Book a Visit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
+                    <p class="text-gray-400 mb-4">Providing quality education that shapes tomorrow's leaders today.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
+                        <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Academics</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Curriculum</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Extracurricular</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">School Calendar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Results</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1"></i>
+                            <span>123 Education Road, Learning City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="mr-2"></i>
+                            <span>+234 123 456 7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2"></i>
+                            <span>info@giantstride.edu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Giant Stride School. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            lightGallery(document.getElementById('gallery'), {
+                selector: '.gallery-item',
+                download: false,
+                thumbnail: true
+            });
+
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        if(btn === this) {
+                            btn.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+                            btn.classList.add('bg-orange-500', 'text-white');
+                        } else {
+                            btn.classList.remove('bg-orange-500', 'text-white');
+                            btn.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+                        }
+                    });
+
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        if(filterValue === 'all' || item.classList.contains(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

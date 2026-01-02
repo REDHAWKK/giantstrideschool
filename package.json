@@ -1,0 +1,17 @@
+{
+  "name": "giant-stride-school",
+  "version": "1.0.0",
+  "description": "The official website for Giant Stride School",
+  "license": "ISC",
+  "author": "Oriarebun Princeton",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"npx @tailwindcss/cli -i ./style.css -o ./tailwind.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}
