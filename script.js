@@ -39,16 +39,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Back to top button
     const backToTopButton = document.createElement('button');
     backToTopButton.innerHTML = '<i data-feather="arrow-up"></i>';
-    backToTopButton.className = 'fixed bottom-8 right-8 bg-orange-500 text-white p-3 rounded-full shadow-lg z-50 hidden hover:bg-orange-600 transition';
+backToTopButton.className =
+'fixed bottom-8 right-8 bg-orange-500 text-white p-3 rounded-full shadow-lg z-50 opacity-0 pointer-events-none hover:bg-orange-600 transition-opacity duration-300';
+
     document.body.appendChild(backToTopButton);
     
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.remove('hidden');
-        } else {
-            backToTopButton.classList.add('hidden');
-        }
-    });
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+  } else {
+    backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+  }
+});
+
     
     backToTopButton.addEventListener('click', function() {
         window.scrollTo({
