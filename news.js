@@ -400,7 +400,7 @@ function renderPostCard(postId, postData) {
   const media = Array.isArray(postData.media) ? postData.media : [];
 
   const deleteBtnHTML = isAdmin
-    ? `<button class="delete-btn text-red-500 text-xs" data-id="${postId}">Delete</button>`
+    ? `<button class="delete-btn text-red-500 text-xs cursor-pointer" data-id="${postId}">Delete</button>`
     : "";
 
   const card = document.createElement("div");
@@ -692,7 +692,7 @@ function addLoadMorePostsButton(show = true) {
   removeLoadMorePostsButton();
   const btn = document.createElement("div");
   btn.className = "flex justify-center my-6";
-  btn.innerHTML = `<button id="load-more-posts-btn" class="bg-primary text-white px-4 py-2 rounded">${show ? "Load more posts" : "No more posts"}</button>`;
+  btn.innerHTML = `<button id="load-more-posts-btn" class="bg-orange-500 text-white px-4 py-2 rounded cursor-pointer">${show ? "Load more posts" : "No more posts"}</button>`;
   newsFeed.insertAdjacentElement("afterend", btn);
   if (!show) {
     const b = btn.querySelector("button");

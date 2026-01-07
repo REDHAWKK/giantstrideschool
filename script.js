@@ -119,3 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.classList.toggle("hidden");
     });
 
+    // Footer Current year
+    const yearElement = document.getElementById("year");
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }

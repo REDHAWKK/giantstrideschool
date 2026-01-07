@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+@theme {
+  @keyframes float {
+    0%, 100% { transform: translateY(0) }
+    50% { transform: translateY(-20px) }
+  }
+
+  @keyframes slide-up {
+    0% { transform: translateY(50px); opacity: 0 }
+    100% { transform: translateY(0); opacity: 1 }
+  }
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in: fade-in 1s ease-in;
+  --animate-slide-up: slide-up 0.8s ease-out;
+}
 html{
     overflow-y:scroll;
 }
@@ -119,4 +134,13 @@ input:focus, textarea:focus, select:focus {
 
 .float-award {
   animation: gentleFloat 6s ease-in-out infinite;
+}
+@keyframes bounce-x {
+  0%   { transform: translateX(0%); }
+  50%  { transform: translateX(50%); }
+  100% { transform: translateX(0%); }
+}
+.animate-bounce-x {
+  display: inline-block;
+  animation: bounce-x 6s ease-in-out infinite;
 }

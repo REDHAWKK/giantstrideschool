@@ -11,7 +11,7 @@
 </head>
 <body class="font-sans bg-gray-50">
 <!-- Navigation -->
-<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg sticky top-0 z-50">
+<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
         
         <!-- Logo -->
@@ -27,18 +27,18 @@
             <a href="index.html" class="hover:text-orange-200 transition">Home</a>
             <a href="about.html" class="hover:text-orange-200 transition">About</a>
             <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
+            <a href="news.html" class="hover:text-orange-200 transition">News</a>
             <a href="team.html" class="hover:text-orange-200 transition">Our Team</a>
 
             <!-- NEW “More” Dropdown -->
             <div class="relative group">
-                <button class="hover:text-orange-200 transition flex items-center">
+                <button class="hover:text-orange-200 transition flex items-center cursor-pointer">
                     More
                     <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
                 </button>
 
                 <!-- Dropdown menu -->
                 <div class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <a href="news.html" class="block px-4 py-2 hover:bg-green-100">News</a>
                     <a href="events.html" class="block px-4 py-2 hover:bg-green-100">Events</a>
                     <a href="blog.html" class="block px-4 py-2 hover:bg-green-100">Blog</a>
                 </div>
@@ -49,7 +49,7 @@
         </div>
 
         <!-- Hamburger Button -->
-        <button id="menu-btn" class="lg:hidden focus:outline-none">
+        <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
             <i data-feather="menu" class="text-white h-8 w-8"></i>
         </button>
     </div>
@@ -59,13 +59,13 @@
     <a href="index.html" class="py-2 border-b">Home</a>
     <a href="about.html" class="py-2 border-b">About</a>
     <a href="gallery.html" class="py-2 border-b">Gallery</a>
+    <a href="news.html" class="py-2 border-b">News</a>
     <a href="team.html" class="py-2 border-b">Our Team</a>
 
     <!-- Mobile “More” section -->
     <details class="py-2 border-b">
-        <summary class="cursor-pointer font-medium">More</summary>
+        <summary class="cursor-pointer font-medium cursor-pointer">More</summary>
         <div class="ml-4 mt-2 flex flex-col space-y-2">
-            <a href="news.html" class="hover:text-orange-500">News</a>
             <a href="events.html" class="hover:text-orange-500">Events</a>
             <a href="blog.html" class="hover:text-orange-500">Blog</a>
         </div>
@@ -80,6 +80,12 @@
 
 </nav>
 
+    <!-- Floating News Text -->
+<div id="news-banner" class="absolute top-[100px] left-0 w-full z-40 cursor-pointer hidden">
+  <span class="text-accent font-bold text-secondary animate-bounce-x">
+   <a href="news.html">Check out the latest news</a>
+  </span>
+</div>
 
     <!-- Hero Section -->
     <section class="relative">
@@ -332,7 +338,7 @@ At Giant Stride School, we nurture excellence by raising confident learners who 
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-8" data-aos="fade-up">Ready to Give Your Child the Best Start?</h2>
             <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Join our community of happy learners and watch your child thrive.</p>
-            <div class="space-x-4" data-aos="fade-up" data-aos-delay="200">
+            <div class=" flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="200">
                 <a href="admission.html" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition">Schedule a Visit</a>
                 <a href="contact.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-full font-semibold inline-block transition">Contact Us</a>
             </div>
@@ -399,12 +405,60 @@ At Giant Stride School, we nurture excellence by raising confident learners who 
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
                 <div class="flex space-x-6">
-                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
+                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="https://oriarebun-princeton.vercel.app/" target="_blank" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
                 </div>
             </div>
         </div>
     </footer>
+        <!-- Firebase v8 (namespaced) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+   <script src="main.js"></script>
+   <script>
+        // ---------- Firebase config ----------
+const firebaseConfig = {
+  apiKey: "AIzaSyDkhouztH4Qa0RGZdxIr8C3RsUgFYqUs7E",
+  authDomain: "wine-with-us-database.firebaseapp.com",
+  projectId: "wine-with-us-database",
+  storageBucket: "wine-with-us-database.appspot.com",
+  messagingSenderId: "254154647200",
+  appId: "1:254154647200:web:87689653adc9af9f5dcbc5",
+  measurementId: "G-YEBJD2TYYR"
+};
+      // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+   </script>
 
+   <script>
+  async function checkForNewPosts() {
+    try {
+      const db = firebase.firestore();
+      const snap = await db.collection("news")
+        .orderBy("createdAt", "desc")
+        .limit(1)
+        .get();
+
+      if (snap.empty) return;
+
+      const latest = snap.docs[0].data();
+      const latestTime = latest.createdAt?.toMillis() || 0;
+
+      const lastSeen = parseInt(localStorage.getItem("lastSeenPost") || "0", 10);
+      console.log("Latest:", latestTime, "Last seen:", lastSeen);
+
+      if (latestTime > lastSeen) {
+        document.getElementById("news-banner").classList.remove("hidden");
+      } else {
+        document.getElementById("news-banner").classList.add("hidden");
+      }
+    } catch (err) {
+      console.error("Error checking new posts:", err);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", checkForNewPosts);
+   </script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
