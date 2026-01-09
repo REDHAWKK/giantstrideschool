@@ -79,7 +79,6 @@
 </div>
 
 </nav>
-
     <!-- Hero Section -->
     <section class="relative pt-14">
         <div class="absolute inset-0 bg-black opacity-40"></div>
@@ -177,7 +176,7 @@
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Frequently Asked Questions</h2>
             <div class="max-w-3xl mx-auto space-y-6">
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up">
-                    <button class="w-full flex justify-between items-center p-6 focus:outline-none">
+                    <button class=" faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
                         <span class="text-lg font-medium text-gray-800">What are the school hours?</span>
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
@@ -186,7 +185,7 @@
                     </div>
                 </div>
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <button class="w-full flex justify-between items-center p-6 focus:outline-none">
+                    <button class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
                         <span class="text-lg font-medium text-gray-800">What is the admission process?</span>
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
@@ -195,7 +194,7 @@
                     </div>
                 </div>
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <button class="w-full flex justify-between items-center p-6 focus:outline-none">
+                    <button class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
                         <span class="text-lg font-medium text-gray-800">What extracurricular activities do you offer?</span>
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
@@ -204,7 +203,7 @@
                     </div>
                 </div>
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <button class="w-full flex justify-between items-center p-6 focus:outline-none">
+                    <button class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
                         <span class="text-lg font-medium text-gray-800">Do you provide transportation services?</span>
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
@@ -213,7 +212,7 @@
                     </div>
                 </div>
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-                    <button class="w-full flex justify-between items-center p-6 focus:outline-none">
+                    <button class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
                         <span class="text-lg font-medium text-gray-800">What is your teacher to student ratio?</span>
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
@@ -299,25 +298,6 @@
             </div>
         </div>
     </footer>
-<script>
-        // FAQ accordion functionality
-        document.querySelectorAll('.border button').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                
-                if (content.classList.contains('hidden')) {
-                    content.classList.remove('hidden');
-                    icon.setAttribute('data-feather', 'chevron-up');
-                    feather.replace();
-                } else {
-                    content.classList.add('hidden');
-                    icon.setAttribute('data-feather', 'chevron-down');
-                    feather.replace();
-                }
-            });
-        });
-    </script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
