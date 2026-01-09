@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="tailwind.css">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
+
 </head>
 <body class="font-sans bg-gray-50">
 <!-- Navigation -->
@@ -80,9 +82,9 @@
 
 </nav>
     <!-- Hero Section -->
-    <section class="relative pt-16 lg:pt-16">
+    <section class="relative pt-14">
         <div class="absolute inset-0 bg-black opacity-40"></div>
-        <img src="images/galley-hero.png" alt="School Gallery" class="w-full h-96 object-cover">
+        <img src="images/img3.png" alt="School Gallery" class="w-full h-96 object-cover">
         <div class="absolute inset-0 flex items-center justify-center text-center px-4">
             <div data-aos="fade-up">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Our Gallery</h1>
@@ -97,8 +99,10 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Moments at Giant Stride</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Explore our vibrant school life through these captivating images of daily activities, events, and special moments.</p>
+<h2 class="text-3xl font-bold text-gray-800 mb-4">Moments at Giant Stride School</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">
+A glimpse into our everyday journey of learning, growth, achievement, and joyful moments that shape confident future giants.
+</p>
             </div>
             
             <div class="flex justify-center mb-8" data-aos="fade-up">
@@ -106,8 +110,8 @@
                     <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg bg-orange-500 text-white filter-button" data-filter="all">
                         All
                     </button>
-                    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button" data-filter="classroom">
-                        Classroom
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button" data-filter="competitions">
+                        Competitions
                     </button>
                     <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button" data-filter="events">
                         Events
@@ -122,14 +126,18 @@
             </div>
             
             <div class="gallery grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery">
-                <!-- Classroom Images -->
-                <div class="gallery-item classroom" data-aos="fade-up" data-src="http://static.photos/education/640x360/14" data-sub-html="Students engaged in classroom learning">
-                    <img src="http://static.photos/education/640x360/14" alt="Classroom Learning" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
-                    <div class="mt-2 text-sm text-gray-600">Classroom Learning</div>
+                <!-- Competitions Images -->
+                <div class="gallery-item competitions" data-aos="fade-up" data-src="images/img2.png" data-sub-html="Students engaged in classroom learning">
+                    <img src="images/img2.png" alt="Classroom Learning" class="w-full h-64 object-cover  rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Multiple Competition Winner - Aruna Omodesire</div>
                 </div>
-                <div class="gallery-item classroom" data-aos="fade-up" data-aos-delay="100" data-src="http://static.photos/education/640x360/15" data-sub-html="Group work in progress">
-                    <img src="http://static.photos/education/640x360/15" alt="Group Work" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
-                    <div class="mt-2 text-sm text-gray-600">Group Activities</div>
+                <div class="gallery-item competitions" data-aos="fade-up" data-aos-delay="100" data-src="images/img7.png" data-sub-html="Group work in progress">
+                    <img src="images/img7.png" alt="Group Work" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Winning of a silver medal at the Annual National Mathematics Competition(ANMC)</div>
+                </div>                
+                <div class="gallery-item competitions" data-aos="fade-up" data-aos-delay="100" data-src="images/img6.png" data-sub-html="Group work in progress">
+                    <img src="images/img6.png" alt="Group Work" class="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition cursor-pointer">
+                    <div class="mt-2 text-sm text-gray-600">Participation in 2023's The Ultimate Mathematics Ambassador(TUMA) Competition</div>
                 </div>
                 
                 <!-- Events Images -->
@@ -182,11 +190,11 @@
     <!-- Video Section -->
     <section class="py-16 bg-gradient-to-r from-green-50 to-orange-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">Experience Our School</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">Video Gallery</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="rounded-xl overflow-hidden shadow-xl" data-aos="fade-right">
                     <div class="aspect-w-16 aspect-h-9">
-                        <iframe class="w-full h-80" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="w-full h-80" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F383469687720654%2F&show_text=false&width=560&t=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="p-6 bg-white">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">A Day at Giant Stride</h3>
@@ -195,7 +203,7 @@
                 </div>
                 <div class="rounded-xl overflow-hidden shadow-xl" data-aos="fade-left">
                     <div class="aspect-w-16 aspect-h-9">
-                        <iframe class="w-full h-80" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="w-full h-80" src="https://www.facebook.com/plugins/video.php?height=420&href=https%3A%2F%2Fwww.facebook.com%2Fgiantstrideschool%2Fvideos%2F188982209016547%2F&show_text=false&width=560&t=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="p-6 bg-white">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Annual School Play</h3>
@@ -223,7 +231,7 @@
                     <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
                     <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education and values for a brighter tomorrow</p>
                     <div class="flex space-x-4">
-                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank" class="text-gray-400 hover:text-orange-400 transition">
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
                             <i data-feather="facebook"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-orange-400 transition">
@@ -275,59 +283,19 @@
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
                 <div class="flex space-x-6">
-                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="https://oriarebun-princeton.vercel.app/" target="_blank" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
+                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
                 </div>
             </div>
         </div>
     </footer>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            lightGallery(document.getElementById('gallery'), {
-                selector: '.gallery-item',
-                download: false,
-                thumbnail: true
-            });
+<!-- LightGallery -->
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
 
-            // Filter functionality
-            const filterButtons = document.querySelectorAll('.filter-button');
-            const galleryItems = document.querySelectorAll('.gallery-item');
+<script src="script.js"></script>
 
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Update active button
-                    filterButtons.forEach(btn => {
-                        if(btn === this) {
-                            btn.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
-                            btn.classList.add('bg-orange-500', 'text-white');
-                        } else {
-                            btn.classList.remove('bg-orange-500', 'text-white');
-                            btn.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
-                        }
-                    });
-
-                    // Filter items
-                    galleryItems.forEach(item => {
-                        if(filterValue === 'all' || item.classList.contains(filterValue)) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </body>
 </html>
