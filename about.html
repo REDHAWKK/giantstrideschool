@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Giant Stride School</title>
+    <title>About Us | Giant Stride School - Quality Education for Tomorrow's Leaders</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <link rel="stylesheet" href="tailwind.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body class="font-sans bg-gray-50">
 <!-- Navigation -->
-<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg sticky top-0 z-50">
+<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
         
         <!-- Logo -->
@@ -29,18 +27,18 @@
             <a href="index.html" class="hover:text-orange-200 transition">Home</a>
             <a href="about.html" class="hover:text-orange-200 transition">About</a>
             <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
+            <a href="news.html" class="hover:text-orange-200 transition">News</a>
             <a href="team.html" class="hover:text-orange-200 transition">Our Team</a>
 
             <!-- NEW “More” Dropdown -->
             <div class="relative group">
-                <button class="hover:text-orange-200 transition flex items-center">
+                <button class="hover:text-orange-200 transition flex items-center cursor-pointer">
                     More
                     <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
                 </button>
 
                 <!-- Dropdown menu -->
                 <div class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <a href="news.html" class="block px-4 py-2 hover:bg-green-100">News</a>
                     <a href="events.html" class="block px-4 py-2 hover:bg-green-100">Events</a>
                     <a href="blog.html" class="block px-4 py-2 hover:bg-green-100">Blog</a>
                 </div>
@@ -51,7 +49,7 @@
         </div>
 
         <!-- Hamburger Button -->
-        <button id="menu-btn" class="lg:hidden focus:outline-none">
+        <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
             <i data-feather="menu" class="text-white h-8 w-8"></i>
         </button>
     </div>
@@ -61,13 +59,13 @@
     <a href="index.html" class="py-2 border-b">Home</a>
     <a href="about.html" class="py-2 border-b">About</a>
     <a href="gallery.html" class="py-2 border-b">Gallery</a>
+    <a href="news.html" class="py-2 border-b">News</a>
     <a href="team.html" class="py-2 border-b">Our Team</a>
 
     <!-- Mobile “More” section -->
     <details class="py-2 border-b">
-        <summary class="cursor-pointer font-medium">More</summary>
+        <summary class="cursor-pointer font-medium cursor-pointer">More</summary>
         <div class="ml-4 mt-2 flex flex-col space-y-2">
-            <a href="news.html" class="hover:text-orange-500">News</a>
             <a href="events.html" class="hover:text-orange-500">Events</a>
             <a href="blog.html" class="hover:text-orange-500">Blog</a>
         </div>
@@ -83,7 +81,7 @@
 </nav>
 
     <!-- Hero Section -->
-    <section class="relative">
+    <section class="relative pt-14">
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <img src="http://static.photos/education/1200x630/4" alt="School Building" class="w-full h-96 object-cover">
         <div class="absolute inset-0 flex items-center justify-center text-center px-4">
@@ -231,9 +229,9 @@
             <div class="grid md:grid-cols-4 gap-10 mb-12">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
-                    <p class="text-gray-400 mb-4">Providing quality education that shapes tomorrow's leaders today.</p>
+                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education and values for a brighter tomorrow</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank" class="text-gray-400 hover:text-orange-400 transition">
                             <i data-feather="facebook"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-orange-400 transition">
@@ -262,7 +260,6 @@
                         <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Curriculum</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Extracurricular</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">School Calendar</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Results</a></li>
                     </ul>
                 </div>
                 <div>
@@ -270,37 +267,31 @@
                     <ul class="space-y-2 text-gray-400">
                         <li class="flex items-start">
                             <i data-feather="map-pin" class="mr-2 mt-1"></i>
-                            <span>123 Education Road, Learning City</span>
+                            <span>Ajibode Rd, Ota 112104, Ogun State</span>
                         </li>
                         <li class="flex items-center">
                             <i data-feather="phone" class="mr-2"></i>
-                            <span>+234 123 456 7890</span>
+                            <span>+234 803 808 5876</span>
                         </li>
                         <li class="flex items-center">
                             <i data-feather="mail" class="mr-2"></i>
-                            <span>info@giantstride.edu</span>
+                            <span>giantstrideschool@gmail.com</span>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Giant Stride School. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition">Terms of Service</a>
+                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="https://oriarebun-princeton.vercel.app/" target="_blank" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-    </script>
     <script src="script.js"></script>
-    <script>feather.replace();</script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 </body>
 </html>
