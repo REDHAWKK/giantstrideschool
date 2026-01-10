@@ -96,16 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ===============================
-       FORMS (PLACEHOLDER)
-    =============================== */
-    document.querySelectorAll("form").forEach(form => {
-        form.addEventListener("submit", e => {
-            e.preventDefault();
-            alert("Thank you for your message! We will get back to you soon.");
-            form.reset();
-        });
-    });
 
 /* ===============================
    GALLERY FILTERS (ALWAYS RUN)

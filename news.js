@@ -267,7 +267,8 @@ postButton?.addEventListener("click", async () => {
       media,
       author: "Giant Stride School",
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      likes: []
+      likes: [],
+      dislikes: []
     });
 
     // reset
@@ -314,6 +315,37 @@ document.addEventListener("click", async (e) => {
   } catch (err) {
     console.error("Like failed:", err);
     alert("Could not update like. Please try again.");
+  }
+});
+
+document.addEventListener("click", async (e) => {
+  const dislikeBtn = e.target.closest(".dislike-btn");
+  if (!dislikeBtn) return;
+
+  const user = auth.currentUser;
+  if (!user) {
+    loginModal?.classList.remove("hidden");
+    return;
+  }
+
+  const postId = dislikeBtn.dataset.id;
+  const postRef = db.collection("news").doc(postId);
+  const uid = user.uid;
+
+  const doc = await postRef.get();
+  const data = doc.data() || {};
+  const dislikes = data.dislikes || [];
+  const likes = data.likes || [];
+
+  if (dislikes.includes(uid)) {
+    await postRef.update({
+      dislikes: firebase.firestore.FieldValue.arrayRemove(uid)
+    });
+  } else {
+    await postRef.update({
+      dislikes: firebase.firestore.FieldValue.arrayUnion(uid),
+      likes: firebase.firestore.FieldValue.arrayRemove(uid) // remove like if exists
+    });
   }
 });
 
@@ -400,7 +432,7 @@ function renderPostCard(postId, postData) {
   const media = Array.isArray(postData.media) ? postData.media : [];
 
   const deleteBtnHTML = isAdmin
-    ? `<button class="delete-btn text-red-500 text-xs cursor-pointer" data-id="${postId}">Delete</button>`
+    ? `<button class="delete-btn text-red-500 text-xs" data-id="${postId}">Delete</button>`
     : "";
 
   const card = document.createElement("div");
@@ -421,11 +453,18 @@ function renderPostCard(postId, postData) {
 
     ${buildMediaGridHTML(postId, media)}
 
-    <div class="flex items-center space-x-6 text-gray-600 text-sm mb-3">
-      <button class="like-btn hover:text-primary" data-id="${postId}">
-        👍 Like (<span class="like-count">${likeCount}</span>)
-      </button>
-    </div>
+<div class="flex items-center space-x-6 text-gray-600 text-sm mb-3">
+  <button class="like-btn flex items-center space-x-1 hover:text-green-600" data-id="${postId}">
+    <i data-feather="thumbs-up"></i>
+    <span class="like-count">${likes.length}</span>
+  </button>
+
+  <button class="dislike-btn flex items-center space-x-1 hover:text-red-500" data-id="${postId}">
+    <i data-feather="thumbs-down"></i>
+    <span class="dislike-count">${(postData.dislikes || []).length}</span>
+  </button>
+</div>
+
 
     <div class="comments-container mb-2">
       <div class="comments-list" id="comments-${postId}"></div>
@@ -442,6 +481,7 @@ function renderPostCard(postId, postData) {
   `;
 
   newsFeed.appendChild(card);
+feather.replace();
 
   // 🔥 INIT LIGHTGALLERY FOR THIS POST
   const galleryEl = document.getElementById(`lg-post-${postId}`);
@@ -471,27 +511,32 @@ function buildMediaGridHTML(postId, media) {
 
   let html = `<div id="lg-post-${postId}" class="media-grid mb-4">`;
 
+  // 1 image
   if (media.length === 1) {
     html += singleMediaHTML(media[0]);
-  } 
+  }
+
+  // 2 images
   else if (media.length === 2) {
-    html += `<div class="grid grid-cols-2 gap-2">
-      ${media.slice(0, 2).map(mediaThumbHTML).join("")}
-    </div>`;
-  } 
+    html += `
+      <div class="grid grid-cols-2 gap-2">
+        ${media.map(mediaThumbHTML).join("")}
+      </div>`;
+  }
+
+  // 3 images → NO overlay EVER
   else if (media.length === 3) {
     html += `
-      <div class="grid grid-cols-2 gap-2 mb-2">
-        ${media.slice(0, 2).map(mediaThumbHTML).join("")}
-      </div>
-      <div class="grid grid-cols-1">
-        ${mediaThumbHTML(media[2])}
+      <div class="grid grid-cols-2 gap-2">
+        ${media.map(mediaThumbHTML).join("")}
       </div>`;
-  } 
+  }
+
+  // 4+ images → overlay ONLY here
   else {
     html += `<div class="grid grid-cols-2 gap-2">`;
     media.slice(0, 4).forEach((m, i) => {
-      html += i === 3 && media.length > 4
+      html += (i === 3)
         ? mediaThumbHTML(m, media.length - 4)
         : mediaThumbHTML(m);
     });
@@ -503,22 +548,33 @@ function buildMediaGridHTML(postId, media) {
 }
 
 
+
+
 function singleMediaHTML(m) {
   return m.type === "video"
     ? videoItemHTML(m, "w-full")
     : imageItemHTML(m, "w-full");
 }
 
-function mediaThumbHTML(m, overlayCount = 0) {
-  const base =
-    m.type === "video"
-      ? videoItemHTML(m, "h-48")
-      : imageItemHTML(m, "h-48");
+function mediaThumbHTML(m) {
+  if (m.type === "video") {
+    return `
+      <a class="lg-item relative block"
+         data-video='{"source":[{"src":"${m.url}","type":"video/mp4"}],"attributes":{"controls":true}}'>
+        <video class="rounded-lg w-full h-48 object-cover">
+          <source src="${m.url}" type="video/mp4">
+        </video>
+      </a>`;
+  }
 
-  return overlayCount
-    ? `<div class="relative">${base}${overlayHTML(overlayCount)}</div>`
-    : `<div>${base}</div>`;
+  return `
+    <a class="lg-item relative block" href="${escapeHtmlAttr(m.url)}">
+      <img src="${escapeHtmlAttr(m.url)}"
+           class="rounded-lg w-full h-48 object-cover">
+    </a>`;
 }
+
+
 
 function imageItemHTML(m, sizeClass) {
   return `
@@ -692,7 +748,7 @@ function addLoadMorePostsButton(show = true) {
   removeLoadMorePostsButton();
   const btn = document.createElement("div");
   btn.className = "flex justify-center my-6";
-  btn.innerHTML = `<button id="load-more-posts-btn" class="bg-orange-500 text-white px-4 py-2 rounded cursor-pointer">${show ? "Load more posts" : "No more posts"}</button>`;
+  btn.innerHTML = `<button id="load-more-posts-btn" class="bg-primary text-white px-4 py-2 rounded">${show ? "Load more posts" : "No more posts"}</button>`;
   newsFeed.insertAdjacentElement("afterend", btn);
   if (!show) {
     const b = btn.querySelector("button");
