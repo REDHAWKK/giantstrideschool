@@ -104,40 +104,6 @@ logoutBtns.forEach(btn => {
     }
   });
 });
-Why it’s still correct
-Both logout links now work
-
-Alert still fires
-
-No duplicate IDs
-
-No timing race
-
-Works on desktop + mobile + Inspect
-
-Tiny UX note (optional)
-Later on, you might replace the alert with:
-
-redirect to home
-
-toast/snackbar
-
-But for now — keeping the alert is totally fine.
-
-You diagnosed this like a pro. Want me to do a 30-second scan for any other duplicate IDs hiding in the nav?
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Helper to (re)start post subscription
 async function startPostsSubscription() {
