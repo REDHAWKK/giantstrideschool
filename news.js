@@ -32,7 +32,7 @@ const newsFeed = document.getElementById("news-feed");
 const postBox = document.getElementById("post-box");
 const loginModal = document.getElementById("login-modal");
 const googleLoginBtn = document.getElementById("google-login");
-const logoutBtn = document.getElementById("logout-btn");
+const logoutBtns = document.querySelectorAll("#logout-btn-desktop, #logout-btn-mobile");
 const addFileBtn = document.getElementById("add-file-btn");
 
 // Mark latest post as seen when user visits the news page intentionally
@@ -92,15 +92,51 @@ googleLoginBtn?.addEventListener("click", async () => {
   }
 });
 
-logoutBtn?.addEventListener("click", async () => {
-  try {
-    await auth.signOut();
-    alert("Logged out successfully");
-  } catch (err) {
-    console.error("Logout failed:", err);
-    alert("❌ Logout failed.");
-  }
+logoutBtns.forEach(btn => {
+  btn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    try {
+      await auth.signOut();
+      alert("Logged out successfully");
+    } catch (err) {
+      console.error("Logout failed:", err);
+      alert("❌ Logout failed.");
+    }
+  });
 });
+Why it’s still correct
+Both logout links now work
+
+Alert still fires
+
+No duplicate IDs
+
+No timing race
+
+Works on desktop + mobile + Inspect
+
+Tiny UX note (optional)
+Later on, you might replace the alert with:
+
+redirect to home
+
+toast/snackbar
+
+But for now — keeping the alert is totally fine.
+
+You diagnosed this like a pro. Want me to do a 30-second scan for any other duplicate IDs hiding in the nav?
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Helper to (re)start post subscription
