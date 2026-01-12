@@ -102,6 +102,7 @@ logoutBtn?.addEventListener("click", async () => {
   }
 });
 
+
 // Helper to (re)start post subscription
 async function startPostsSubscription() {
   // If we already have a realtime listener, unsubscribe it first
@@ -289,65 +290,69 @@ postButton?.addEventListener("click", async () => {
 
 // ---------- Like handling (delegated) ----------
 document.addEventListener("click", async (e) => {
-  const likeBtn = e.target.closest(".like-btn");
-  if (!likeBtn) return;
+  const btn = e.target.closest(".like-btn");
+  if (!btn) return;
 
   const user = auth.currentUser;
-  if (!user) {
-    loginModal?.classList.remove("hidden");
-    return;
-  }
+  if (!user) return loginModal?.classList.remove("hidden");
 
-  const postId = likeBtn.dataset.id;
+  const postId = btn.dataset.id;
   const postRef = db.collection("news").doc(postId);
   const uid = user.uid;
+
+  const isActive = btn.classList.contains("text-green-600");
 
   try {
-    const doc = await postRef.get();
-    const data = doc.data() || {};
-    const likes = data.likes || [];
-
-    if (likes.includes(uid)) {
-      await postRef.update({ likes: firebase.firestore.FieldValue.arrayRemove(uid) });
+    if (isActive) {
+      // unlike
+      await postRef.update({
+        likes: firebase.firestore.FieldValue.arrayRemove(uid)
+      });
     } else {
-      await postRef.update({ likes: firebase.firestore.FieldValue.arrayUnion(uid) });
+      // like (and remove dislike)
+      await postRef.update({
+        likes: firebase.firestore.FieldValue.arrayUnion(uid),
+        dislikes: firebase.firestore.FieldValue.arrayRemove(uid)
+      });
     }
   } catch (err) {
-    console.error("Like failed:", err);
-    alert("Could not update like. Please try again.");
+    console.error("Like toggle failed:", err);
   }
 });
+// ---------- Dislike handling (delegated) ----------
 
 document.addEventListener("click", async (e) => {
-  const dislikeBtn = e.target.closest(".dislike-btn");
-  if (!dislikeBtn) return;
+  const btn = e.target.closest(".dislike-btn");
+  if (!btn) return;
 
   const user = auth.currentUser;
-  if (!user) {
-    loginModal?.classList.remove("hidden");
-    return;
-  }
+  if (!user) return loginModal?.classList.remove("hidden");
 
-  const postId = dislikeBtn.dataset.id;
+  const postId = btn.dataset.id;
   const postRef = db.collection("news").doc(postId);
   const uid = user.uid;
 
-  const doc = await postRef.get();
-  const data = doc.data() || {};
-  const dislikes = data.dislikes || [];
-  const likes = data.likes || [];
+  const isActive = btn.classList.contains("text-red-500");
 
-  if (dislikes.includes(uid)) {
-    await postRef.update({
-      dislikes: firebase.firestore.FieldValue.arrayRemove(uid)
-    });
-  } else {
-    await postRef.update({
-      dislikes: firebase.firestore.FieldValue.arrayUnion(uid),
-      likes: firebase.firestore.FieldValue.arrayRemove(uid) // remove like if exists
-    });
+  try {
+    if (isActive) {
+      // undislike
+      await postRef.update({
+        dislikes: firebase.firestore.FieldValue.arrayRemove(uid)
+      });
+    } else {
+      // dislike (and remove like)
+      await postRef.update({
+        dislikes: firebase.firestore.FieldValue.arrayUnion(uid),
+        likes: firebase.firestore.FieldValue.arrayRemove(uid)
+      });
+    }
+  } catch (err) {
+    console.error("Dislike toggle failed:", err);
   }
 });
+
+
 
 // ---------- Comments: post comment & delete post (delegated) ----------
 document.addEventListener("click", async (e) => {
@@ -425,7 +430,13 @@ document.addEventListener("click", async (e) => {
 // Render a single post card and attach listeners for comments (initial comments load)
 function renderPostCard(postId, postData) {
   const likes = postData.likes || [];
-  const likeCount = likes.length;
+  const dislikes = postData.dislikes || [];
+  const uid = auth.currentUser?.uid;
+const userLiked = uid && likes.includes(uid);
+const userDisliked = uid && dislikes.includes(uid);
+const likeBtnClass = `like-btn flex items-center space-x-1 ${userLiked ? "text-green-600" : "text-gray-600 hover:text-green-600"}`;
+const dislikeBtnClass = `dislike-btn flex items-center space-x-1 ${userDisliked ? "text-red-600" : "text-gray-600 hover:text-red-500"}`;
+
   const createdAt = postData.createdAt ? formatDate(postData.createdAt) : "";
   const author = postData.author || "Giant Stride School";
   const text = postData.text || "";
@@ -454,21 +465,21 @@ function renderPostCard(postId, postData) {
     ${buildMediaGridHTML(postId, media)}
 
 <div class="flex items-center space-x-6 text-gray-600 text-sm mb-3">
-  <button class="like-btn flex items-center space-x-1 hover:text-green-600" data-id="${postId}">
-    <i data-feather="thumbs-up"></i>
-    <span class="like-count">${likes.length}</span>
-  </button>
+<button class="${likeBtnClass}" data-id="${postId}">
+  <i data-feather="thumbs-up"></i>
+  <span class="like-count">${likes.length}</span>
+</button>
 
-  <button class="dislike-btn flex items-center space-x-1 hover:text-red-500" data-id="${postId}">
-    <i data-feather="thumbs-down"></i>
-    <span class="dislike-count">${(postData.dislikes || []).length}</span>
-  </button>
+<button class="${dislikeBtnClass}" data-id="${postId}">
+  <i data-feather="thumbs-down"></i>
+  <span class="dislike-count">${dislikes.length}</span>
+</button>
 </div>
 
 
     <div class="comments-container mb-2">
       <div class="comments-list" id="comments-${postId}"></div>
-      <button class="load-more-comments text-sm text-primary hidden" data-id="${postId}">
+      <button class="load-more-comments text-sm text-primary hidden cursor-pointer" data-id="${postId}">
         Load more comments
       </button>
     </div>
@@ -497,12 +508,22 @@ feather.replace();
 
   loadCommentsForPost(postId, true);
 
-  db.collection("news").doc(postId).onSnapshot(doc => {
-    if (!doc.exists) return;
-    const data = doc.data();
-    const likeCountEl = card.querySelector(".like-count");
-    if (likeCountEl) likeCountEl.textContent = (data.likes || []).length;
-  });
+db.collection("news").doc(postId).onSnapshot(doc => {
+  if (!doc.exists) return;
+  const data = doc.data();
+  const uid = auth.currentUser?.uid;
+  const card = document.getElementById(`post-${postId}`);
+  if (!card || !uid) return;
+
+  const likeBtn = card.querySelector(".like-btn");
+  const dislikeBtn = card.querySelector(".dislike-btn");
+
+  likeBtn.classList.toggle("text-green-600", data.likes?.includes(uid));
+  dislikeBtn.classList.toggle("text-red-500", data.dislikes?.includes(uid));
+
+  likeBtn.querySelector(".like-count").textContent = (data.likes || []).length;
+  dislikeBtn.querySelector(".dislike-count").textContent = (data.dislikes || []).length;
+});
 }
 
 
@@ -510,42 +531,36 @@ function buildMediaGridHTML(postId, media) {
   if (!media.length) return "";
 
   let html = `<div id="lg-post-${postId}" class="media-grid mb-4">`;
+  html += `<div class="grid grid-cols-2 gap-2">`;
 
-  // 1 image
-  if (media.length === 1) {
-    html += singleMediaHTML(media[0]);
-  }
+  media.forEach((m, i) => {
+    const isVisible = i < 4;
+    const isOverlay = i === 3 && media.length > 4;
 
-  // 2 images
-  else if (media.length === 2) {
     html += `
-      <div class="grid grid-cols-2 gap-2">
-        ${media.map(mediaThumbHTML).join("")}
-      </div>`;
-  }
+      <a class="lg-item relative block ${isVisible ? "" : "hidden"}"
+         ${m.type === "video"
+           ? `data-video='{"source":[{"src":"${m.url}","type":"video/mp4"}],"attributes":{"controls":true}}'`
+           : `href="${escapeHtmlAttr(m.url)}"`}>
 
-  // 3 images → NO overlay EVER
-  else if (media.length === 3) {
-    html += `
-      <div class="grid grid-cols-2 gap-2">
-        ${media.map(mediaThumbHTML).join("")}
-      </div>`;
-  }
+        ${m.type === "video"
+          ? `<video class="rounded-lg w-full h-48 object-cover">
+               <source src="${m.url}" type="video/mp4">
+             </video>`
+          : `<img src="${escapeHtmlAttr(m.url)}"
+                 class="rounded-lg w-full h-48 object-cover">`
+        }
 
-  // 4+ images → overlay ONLY here
-  else {
-    html += `<div class="grid grid-cols-2 gap-2">`;
-    media.slice(0, 4).forEach((m, i) => {
-      html += (i === 3)
-        ? mediaThumbHTML(m, media.length - 4)
-        : mediaThumbHTML(m);
-    });
-    html += `</div>`;
-  }
+        ${isOverlay ? overlayHTML(media.length - 4) : ""}
+      </a>
+    `;
+  });
 
-  html += `</div>`;
+  html += `</div></div>`;
   return html;
 }
+
+
 
 
 
@@ -576,6 +591,7 @@ function mediaThumbHTML(m) {
 
 
 
+
 function imageItemHTML(m, sizeClass) {
   return `
     <a class="lg-item" href="${escapeHtmlAttr(m.url)}">
@@ -603,80 +619,6 @@ function overlayHTML(count) {
     </div>`;
 }
 
-// // ---------- Lightbox API (global functions used by HTML onclicks) ----------
-// window.openLightboxByPost = function(postId, index) {
-//   const media = postMediaMap.get(postId) || [];
-//   openLightbox(media, index);
-// };
-
-// function openLightbox(media, index) {
-//   if (!media || media.length === 0) return;
-//   lightbox?.classList.remove("hidden");
-//   showLightboxItem(media, index);
-//   // store current state
-//   window._lightbox = { media, index };
-// }
-
-// function showLightboxItem(media, index) {
-//   // fallback if called without args
-//   if (!media) {
-//     const state = window._lightbox || {};
-//     media = state.media || [];
-//     index = state.index || 0;
-//   }
-//   const m = media[index];
-//   if (!m) return;
-
-//   // hide both first
-//   lightboxImg?.classList.add("hidden");
-//   lightboxVideo?.classList.add("hidden");
-
-//   if (m.type === "video") {
-//     if (lightboxVideo) {
-//       lightboxVideo.src = m.url;
-//       lightboxVideo.classList.remove("hidden");
-//       try { lightboxVideo.play(); } catch (e) { /* ignore autoplay block */ }
-//     }
-//   } else {
-//     if (lightboxImg) {
-//       lightboxImg.src = m.url;
-//       lightboxImg.classList.remove("hidden");
-//     }
-//   }
-
-//   // save index
-//   window._lightbox = { media, index };
-// }
-
-// window.closeLightbox = function() {
-//   if (!lightbox) return;
-//   if (lightboxVideo) {
-//     try { lightboxVideo.pause(); lightboxVideo.removeAttribute("src"); lightboxVideo.load(); } catch (e) {}
-//   }
-//   lightbox.classList.add("hidden");
-// };
-
-// window.prevLightbox = function() {
-//   const state = window._lightbox || {};
-//   if (!state.media) return;
-//   if (state.index > 0) {
-//     state.index--;
-//     window._lightbox = state;
-//     showLightboxItem(state.media, state.index);
-//   }
-// };
-
-// window.nextLightbox = function() {
-//   const state = window._lightbox || {};
-//   if (!state.media) return;
-//   if (state.index < state.media.length - 1) {
-//     state.index++;
-//     window._lightbox = state;
-//     showLightboxItem(state.media, state.index);
-//   }
-// };
-
-// ---------- Comments pagination & rendering ----------
 async function loadCommentsForPost(postId, reset = false, callerButton = null) {
   try {
     const container = document.getElementById(`comments-${postId}`);
@@ -748,7 +690,7 @@ function addLoadMorePostsButton(show = true) {
   removeLoadMorePostsButton();
   const btn = document.createElement("div");
   btn.className = "flex justify-center my-6";
-  btn.innerHTML = `<button id="load-more-posts-btn" class="bg-primary text-white px-4 py-2 rounded">${show ? "Load more posts" : "No more posts"}</button>`;
+  btn.innerHTML = `<button id="load-more-posts-btn" class="bg-orange-500 text-white px-4 py-2 rounded cursor-pointer">${show ? "Load more posts" : "No more posts"}</button>`;
   newsFeed.insertAdjacentElement("afterend", btn);
   if (!show) {
     const b = btn.querySelector("button");
