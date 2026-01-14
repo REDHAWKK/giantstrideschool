@@ -64,7 +64,7 @@
 
     <!-- Mobile “More” section -->
     <details class="py-2 border-b">
-        <summary class="cursor-pointer font-medium cursor-pointer">More</summary>
+        <summary class="cursor-pointer font-medium">More</summary>
         <div class="ml-4 mt-2 flex flex-col space-y-2">
             <a href="events.html" class="hover:text-orange-500">Events</a>
             <a href="blog.html" class="hover:text-orange-500">Blog</a>
@@ -103,29 +103,29 @@
                         <i data-feather="map-pin" class="text-orange-500 h-8 w-8"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">Our Location</h3>
-                    <p class="text-gray-600">123 Education Road<br>Learning City, State 100001<br>Nigeria</p>
+                    <p class="text-gray-600">16 Fashina Street, off Ajibode Rd<br>Isorosi Ijako, <br> Ogun State, Nigeria</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i data-feather="phone" class="text-orange-500 h-8 w-8"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">Phone Numbers</h3>
-                    <p class="text-gray-600">+234 123 456 7890<br>+234 987 654 3210</p>
-                    <p class="text-gray-600 mt-2">Mon-Fri, 8:00AM - 4:00PM</p>
+                    <p class="text-gray-600">+234 803 747 9036 <br> +234 915 855 1031</p>
+                    <p class="text-gray-600 mt-2">Mon-Fri, 8:00AM - 5:00PM</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i data-feather="mail" class="text-orange-500 h-8 w-8"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">Email Address</h3>
-                    <p class="text-gray-600">giantstrideschool@gmail.com<br>admissions@giantstride.edu</p>
+                    <p class="text-gray-600">giantstrideschool@gmail.com</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Map & Contact Form -->
-    <section class="py-16 bg-gradient-to-r from-green-50 to-orange-50">
+    <section class="py-24 bg-gradient-to-r from-green-50 to-orange-50">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-12">
                 <div class="lg:w-1/2" data-aos="fade-right">
@@ -140,22 +140,23 @@
   action="https://submit-form.com/XpEhGQSfg"
   method="POST"
   class="bg-gray-50 p-8 rounded-xl shadow-lg space-y-6"
+  id="contact-form"
 >
                         <div class="mb-6">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="John Doe">
+                            <input type="text" id="name" name="Full-Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="John Doe">
                         </div>
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="john@example.com">
+                            <input type="email" id="email" name="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="john@example.com">
                         </div>
                         <div class="mb-6">
-                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="+234 123 456 7890">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Whatsapp Number</label>
+                            <input type="tel" id="phone" name="Whatsapp-Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="+234 123 456 7890">
                         </div>
                         <div class="mb-6">
                             <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                            <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                            <select id="subject" name="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                                 <option value="">Select a subject</option>
                                 <option value="admission">Admission Inquiry</option>
                                 <option value="visit">Schedule a Visit</option>
@@ -165,7 +166,7 @@
                         </div>
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Your message here..."></textarea>
+                            <textarea id="message" name="Message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Your message here..."></textarea>
                         </div>
                         <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition">Send Message</button>
                     </form>
@@ -185,7 +186,7 @@
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
                     <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600">Our regular school hours are from 8:00 AM to 2:00 PM for all classes. We also offer after-school care until 4:00 PM for working parents.</p>
+                        <p class="text-gray-600">Our regular school hours are from 8:00 AM to 5:00 PM for all classes.</p>
                     </div>
                 </div>
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
@@ -194,7 +195,7 @@
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
                     <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600">Our admission process includes:<br>1. Submission of nlication form<br>2. Entrance assessment (for certain classes)<br>3. Interview with parents and child<br>4. Payment of fees upon acceptance</p>
+                        <p class="text-gray-600">Our admission process includes:<br>1. Fill and submit the online application form<br>2. Entrance assessment (for certain classes)<br>3. Interview with parents and child<br>4. Payment of fees upon acceptance</p>
                     </div>
                 </div>
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
@@ -212,16 +213,7 @@
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
                     <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600">Yes, we have a safe and reliable school bus service that covers most areas in the city. Our buses are equipped with seat belts and are supervised by trained bus monitors.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-                    <button class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
-                        <span class="text-lg font-medium text-gray-800">What is your teacher to student ratio?</span>
-                        <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
-                    </button>
-                    <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600">We maintain a low teacher-to-student ratio to ensure personalized attention. For Nursery classes, the ratio is 1:10, while for Primary classes it's 1:15. We also have teaching assistants in all classes.</p>
+                        <p class="text-gray-600">Transportation services are currently unavailable.</p>
                     </div>
                 </div>
             </div>
@@ -233,7 +225,7 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Ready to Visit Our School?</h2>
             <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Schedule a tour to see our facilities and meet our team.</p>
-            <a href="#" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition" data-aos="fade-up" data-aos-delay="200">Schedule a Visit</a>
+            <a href="#contact-form" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition" data-aos="fade-up" data-aos-delay="200">Schedule a Visit</a>
         </div>
     </section>
 
