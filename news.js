@@ -748,45 +748,38 @@ function escapeHtmlAttr(str) {
 
 // ---------- Initial auth state and admin check ----------
 auth.onAuthStateChanged(async (user) => {
-  // Reset admin flag
   isAdmin = false;
 
   if (!user) {
-    // Not logged in
     loginModal?.classList.remove("hidden");
-    logoutBtn?.classList.add("hidden");
+    logoutBtns.forEach(b => b.classList.add("hidden"));
     postBox?.classList.add("hidden");
 
-    // Unsubscribe posts if active - we'll load first page non-realtime
     if (unsubscribePosts) {
-      try { unsubscribePosts(); } catch (e) {}
+      try { unsubscribePosts(); } catch {}
       unsubscribePosts = null;
     }
 
-    // Try to load posts non-realtime for anonymous users
     loadPostsPage();
     return;
   }
 
-  // Logged in
+  // logged in
   loginModal?.classList.add("hidden");
-  logoutBtn?.classList.remove("hidden");
+  logoutBtns.forEach(b => b.classList.remove("hidden"));
 
-  // Check admin role by checking the 'admins' collection document with user's email
   try {
     const roleDoc = await db.collection("admins").doc(user.email).get();
     isAdmin = roleDoc.exists;
-    if (isAdmin) postBox?.classList.remove("hidden");
-    else postBox?.classList.add("hidden");
-  } catch (err) {
-    console.error("Role check failed:", err);
+    postBox?.classList.toggle("hidden", !isAdmin);
+  } catch (e) {
     postBox?.classList.add("hidden");
     isAdmin = false;
   }
 
-  // Start realtime subscription for top posts
   startPostsSubscription();
 });
+
 
 // On first load (no auth event), attempt to load posts (anonymous view)
 if (!auth.currentUser) {
