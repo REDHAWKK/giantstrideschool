@@ -103,27 +103,40 @@
 <p class="text-gray-600 max-w-2xl mx-auto">
 A glimpse into our everyday journey of learning, growth, achievement, and joyful moments that shape confident future giants.
 </p>
+<div class="flex justify-center mt-6 px-4">
+  <a
+    href="#video-gallery"
+    class="inline-flex items-center gap-2 px-6 py-3 text-sm sm:text-base font-semibold
+           bg-orange-500 text-white rounded-full shadow-md
+           hover:bg-orange-600 transition
+           w-full sm:w-auto justify-center"
+  >
+    ▶ Video Gallery
+  </a>
+</div>
+
             </div>
             
-            <div class="flex justify-center mb-8" data-aos="fade-up">
-                <div class="inline-flex rounded-md shadow-sm">
-                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg bg-orange-500 text-white filter-button cursor-pointer" data-filter="all">
-                        All
-                    </button>
-                    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button  cursor-pointer" data-filter="competitions">
-                        Competitions
-                    </button>
-                    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button cursor-pointer" data-filter="classroom-activities">
-                        Classroom Activities
-                    </button>
-                    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button cursor-pointer" data-filter="sports">
-                        Sports
-                    </button>
-                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button cursor-pointer" data-filter="facilities">
-                        Facilities
-                    </button>
-                </div>
-            </div>
+<div class="mb-8 overflow-x-auto lg:flex lg:justify-center" data-aos="fade-up">
+  <div class="inline-flex rounded-lg shadow-sm whitespace-nowrap min-w-max px-4">
+    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg bg-orange-500 text-white filter-button cursor-pointer" data-filter="all">
+      All
+    </button>
+    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button cursor-pointer" data-filter="competitions">
+      Competitions
+    </button>
+    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button cursor-pointer" data-filter="classroom-activities">
+      Classroom Activities
+    </button>
+    <button type="button" class="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button cursor-pointer" data-filter="sports">
+      Sports
+    </button>
+    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg bg-gray-200 text-gray-800 hover:bg-gray-300 filter-button cursor-pointer" data-filter="facilities">
+      Facilities
+    </button>
+  </div>
+</div>
+
             
             <div class="gallery grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery">
                 <!-- Competitions Images -->
@@ -196,7 +209,7 @@ A glimpse into our everyday journey of learning, growth, achievement, and joyful
     </section>
 
     <!-- Video Section -->
-    <section class="py-16 bg-gradient-to-r from-green-50 to-orange-50">
+    <section class="py-24 bg-gradient-to-r from-green-50 to-orange-50" id="video-gallery">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">Video Gallery</h2>
             <div class="grid md:grid-cols-2 gap-8">
