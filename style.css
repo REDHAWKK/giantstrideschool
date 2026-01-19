@@ -133,7 +133,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .float-award {
-  animation: gentleFloat 6s ease-in-out infinite;
+  animation: gentleFloat 3s ease-in-out infinite;
 }
 @keyframes bounce-x {
   0%   { transform: translateX(0%); }
