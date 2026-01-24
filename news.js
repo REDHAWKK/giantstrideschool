@@ -16,6 +16,28 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+// ---------- SweetAlert helpers ----------
+function showAlert({ title, text, icon = "info" }) {
+  return Swal.fire({
+    title,
+    text,
+    icon,
+    confirmButtonColor: "#f97316", // orange-500
+  });
+}
+
+function showConfirm({ title, text }) {
+  return Swal.fire({
+    title,
+    text,
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Yes",
+    cancelButtonText: "Cancel",
+    confirmButtonColor: "#f97316",
+  });
+}
+
 // ---------- Globals ----------
 let isAdmin = false;                 // fixed: global admin flag
 let unsubscribePosts = null;         // holds realtime listener for top page
@@ -36,7 +58,7 @@ const logoutBtns = document.querySelectorAll("#logout-btn-desktop, #logout-btn-m
 const addFileBtn = document.getElementById("add-file-btn");
 
 // Mark latest post as seen when user visits the news page intentionally
-function markLatestAsSeen() {
+function markLatestAsSeen() {s
   db.collection("news")
     .orderBy("createdAt", "desc")
     .limit(1)
@@ -56,11 +78,6 @@ function markLatestAsSeen() {
 
 // Run once when the news page loads
 document.addEventListener("DOMContentLoaded", markLatestAsSeen);
-
-// // lightbox elements
-// const lightbox = document.getElementById("lightbox");
-// const lightboxImg = document.getElementById("lightbox-img");
-// const lightboxVideo = document.getElementById("lightbox-video");
 
 // local state for file uploads and media mapping
 let selectedFiles = [];
@@ -88,7 +105,12 @@ googleLoginBtn?.addEventListener("click", async () => {
     await auth.signInWithPopup(provider);
   } catch (err) {
     console.error("Login error:", err);
-    alert("❌ Login failed. Try again.");
+
+    showAlert({
+      title: "Login failed",
+      text: "Something went wrong while signing in. Please try again.",
+      icon: "error"
+    });
   }
 });
 
@@ -97,10 +119,21 @@ logoutBtns.forEach(btn => {
     e.preventDefault();
     try {
       await auth.signOut();
-      alert("Logged out successfully");
+
+      showAlert({
+        title: "Logged out",
+        text: "You have been logged out successfully.",
+        icon: "success"
+      });
+
     } catch (err) {
       console.error("Logout failed:", err);
-      alert("❌ Logout failed.");
+
+      showAlert({
+        title: "Logout failed",
+        text: "Something went wrong. Please try again.",
+        icon: "error"
+      });
     }
   });
 });
@@ -223,10 +256,14 @@ filePreview?.addEventListener("click", (e) => {
 postButton?.addEventListener("click", async () => {
   const text = (postText?.value || "").trim();
 
-  if (!text && selectedFiles.length === 0) {
-    alert("Write something or upload a file before posting!");
-    return;
-  }
+if (!text && selectedFiles.length === 0) {
+  showAlert({
+    title: "Nothing to post",
+    text: "Write something or upload a file before posting.",
+    icon: "warning"
+  });
+  return;
+}
 
   const user = auth.currentUser;
   if (!user) {
@@ -274,15 +311,27 @@ postButton?.addEventListener("click", async () => {
       dislikes: []
     });
 
-    // reset
-    postText.value = "";
-    selectedFiles = [];
-    renderPreviews();
-    alert("✅ Post successful!");
-  } catch (err) {
-    console.error("Post failed:", err);
-    alert("❌ Could not post. Try again.");
-  } finally {
+// reset
+postText.value = "";
+selectedFiles = [];
+renderPreviews();
+
+showAlert({
+  title: "Posted!",
+  text: "Your news has been published successfully.",
+  icon: "success"
+});
+
+} catch (err) {
+  console.error("Post failed:", err);
+
+  showAlert({
+    title: "Post failed",
+    text: "Could not post your news. Please try again.",
+    icon: "error"
+  });
+
+} finally {
   if (postButton) {
     postButton.disabled = false;
     postButton.innerHTML = "Post";
@@ -365,48 +414,92 @@ document.addEventListener("click", async (e) => {
     const input = document.querySelector(`.comment-input[data-id="${postId}"]`);
     if (!input) return;
     const text = input.value.trim();
-    if (!text) return alert("Write a comment first!");
+if (!text) {
+  showAlert({
+    title: "Empty comment",
+    text: "Write something before posting your comment.",
+    icon: "warning"
+  });
+  return;
+}
 
     const user = auth.currentUser;
-    if (!user) return alert("Log in to comment.");
+if (!user) {
+  showAlert({
+    title: "Login required",
+    text: "Please log in to comment on this post.",
+    icon: "warning"
+  });
+  return;
+}
 
-    try {
-      await db.collection("news").doc(postId).collection("comments").add({
-        text,
-        author: user.displayName || user.email || "Anonymous",
-        uid: user.uid,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp()
-      });
-      input.value = "";
-      // optionally refresh shown comments (we'll fetch a fresh page)
-      loadCommentsForPost(postId, /*reset*/ true);
-    } catch (err) {
-      console.error("Comment failed:", err);
-      alert("❌ Could not add comment.");
-    }
+try {
+  await db.collection("news").doc(postId).collection("comments").add({
+    text,
+    author: user.displayName || user.email || "Anonymous",
+    uid: user.uid,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  });
+
+  input.value = "";
+  loadCommentsForPost(postId, /*reset*/ true);
+
+} catch (err) {
+  console.error("Comment failed:", err);
+
+  showAlert({
+    title: "Comment failed",
+    text: "Could not add your comment. Please try again.",
+    icon: "error"
+  });
+}
+return;
+}
+
+// ---------- Delete post (admins only) ----------
+if (e.target.classList.contains("delete-btn")) {
+  const postId = e.target.dataset.id;
+
+  if (!isAdmin) {
+    showAlert({
+      title: "Access denied",
+      text: "Only administrators can delete posts.",
+      icon: "error"
+    });
     return;
   }
 
-  // Delete post (admins only)
-  if (e.target.classList.contains("delete-btn")) {
-    const postId = e.target.dataset.id;
-    if (!isAdmin) return alert("Only admins can delete posts.");
-    if (!confirm("Delete this post?")) return;
-    try {
-      // Delete comments subcollection (best-effort; Firestore doesn't allow deleting collection in one call)
-      // We'll delete top-level doc (comments remain orphaned in console but usually small). For production,
-      // consider Cloud Function to cascade delete.
-      await db.collection("news").doc(postId).delete();
-      alert("✅ Post deleted");
-      // remove from DOM if present
-      const card = document.getElementById(`post-${postId}`);
-      if (card) card.remove();
-    } catch (err) {
-      console.error("Delete failed:", err);
-      alert("❌ Could not delete post.");
-    }
-    return;
+  const result = await showConfirm({
+    title: "Delete post?",
+    text: "This action cannot be undone."
+  });
+
+  if (!result.isConfirmed) return;
+
+  try {
+    await db.collection("news").doc(postId).delete();
+
+await showAlert({
+  title: "Post deleted",
+  text: "The post has been removed successfully.",
+  icon: "success"
+});
+
+// Refresh page after confirmation
+window.location.reload();
+
+
+  } catch (err) {
+    console.error("Delete failed:", err);
+
+    showAlert({
+      title: "Delete failed",
+      text: "Could not delete this post. Please try again.",
+      icon: "error"
+    });
   }
+  return;
+}
 
   // Load more comments for a post
   if (e.target.classList.contains("load-more-comments")) {
@@ -445,7 +538,7 @@ const dislikeBtnClass = `dislike-btn flex items-center space-x-1 ${userDisliked 
   const media = Array.isArray(postData.media) ? postData.media : [];
 
   const deleteBtnHTML = isAdmin
-    ? `<button class="delete-btn text-red-500 text-xs" data-id="${postId}">Delete</button>`
+    ? `<button class="delete-btn text-red-500 text-xs cursor-pointer" data-id="${postId}">Delete</button>`
     : "";
 
   const card = document.createElement("div");
@@ -467,7 +560,7 @@ const dislikeBtnClass = `dislike-btn flex items-center space-x-1 ${userDisliked 
     ${buildMediaGridHTML(postId, media)}
 
 <div class="flex items-center space-x-6 text-gray-600 text-sm mb-3">
-<button class="${likeBtnClass}" data-id="${postId}">
+<button class="${likeBtnClass} cursor-pointer" data-id="${postId}">
   <i data-feather="thumbs-up"></i>
   <span class="like-count">${likes.length}</span>
 </button>
@@ -489,7 +582,7 @@ const dislikeBtnClass = `dislike-btn flex items-center space-x-1 ${userDisliked 
     <div class="flex items-center mt-2">
       <input type="text" class="comment-input flex-1 border rounded px-3 py-1 text-sm"
              placeholder="Write a comment..." data-id="${postId}">
-      <button class="comment-btn ml-2 text-primary" data-id="${postId}">Post</button>
+      <button class="comment-btn ml-2 text-primary cursor-pointer" data-id="${postId}">Post</button>
     </div>
   `;
 
@@ -532,7 +625,31 @@ db.collection("news").doc(postId).onSnapshot(doc => {
 function buildMediaGridHTML(postId, media) {
   if (!media.length) return "";
 
-  let html = `<div id="lg-post-${postId}" class="media-grid mb-4">`;
+  // 🔹 SINGLE MEDIA → FULL WIDTH
+  if (media.length === 1) {
+    const m = media[0];
+    return `
+      <div id="lg-post-${postId}" class="mb-4">
+        <a class="lg-item block"
+          ${m.type === "video"
+            ? `data-video='{"source":[{"src":"${m.url}","type":"video/mp4"}],"attributes":{"controls":true}}'`
+            : `href="${escapeHtmlAttr(m.url)}"`}>
+
+          ${
+            m.type === "video"
+              ? `<video class="rounded-lg w-full max-h-[450px] object-contain">
+                   <source src="${m.url}" type="video/mp4">
+                 </video>`
+              : `<img src="${escapeHtmlAttr(m.url)}"
+                     class="rounded-lg w-full max-h-[450px] object-contain">`
+          }
+        </a>
+      </div>
+    `;
+  }
+
+  // 🔹 MULTIPLE MEDIA → GRID (unchanged behavior)
+  let html = `<div id="lg-post-${postId}" class="mb-4">`;
   html += `<div class="grid grid-cols-2 gap-2">`;
 
   media.forEach((m, i) => {
@@ -541,16 +658,17 @@ function buildMediaGridHTML(postId, media) {
 
     html += `
       <a class="lg-item relative block ${isVisible ? "" : "hidden"}"
-         ${m.type === "video"
-           ? `data-video='{"source":[{"src":"${m.url}","type":"video/mp4"}],"attributes":{"controls":true}}'`
-           : `href="${escapeHtmlAttr(m.url)}"`}>
-
         ${m.type === "video"
-          ? `<video class="rounded-lg w-full h-48 object-cover">
-               <source src="${m.url}" type="video/mp4">
-             </video>`
-          : `<img src="${escapeHtmlAttr(m.url)}"
-                 class="rounded-lg w-full h-48 object-cover">`
+          ? `data-video='{"source":[{"src":"${m.url}","type":"video/mp4"}],"attributes":{"controls":true}}'`
+          : `href="${escapeHtmlAttr(m.url)}"`}>
+
+        ${
+          m.type === "video"
+            ? `<video class="rounded-lg w-full h-48 object-cover">
+                 <source src="${m.url}" type="video/mp4">
+               </video>`
+            : `<img src="${escapeHtmlAttr(m.url)}"
+                   class="rounded-lg w-full h-48 object-cover">`
         }
 
         ${isOverlay ? overlayHTML(media.length - 4) : ""}
