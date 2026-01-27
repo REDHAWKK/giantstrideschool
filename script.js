@@ -146,3 +146,16 @@ if (gallery && window.lightGallery) {
     });
 }
 });
+const moreBtn = document.getElementById("more-btn");
+const moreMenu = document.getElementById("more-menu");
+
+if (moreBtn && moreMenu) {
+  moreBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    moreMenu.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", () => {
+    moreMenu.classList.add("hidden");
+  });
+}

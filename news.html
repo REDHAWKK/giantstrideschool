@@ -33,17 +33,18 @@
             <a href="news.html" id="logout-btn-desktop" class="hover:text-orange-200 transition">LogOut</a>
 
             <!-- NEW “More” Dropdown -->
-            <div class="relative group">
-                <button class="hover:text-orange-200 transition flex items-center cursor-pointer">
-                    More
-                    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
-                </button>
+<div class="relative">
+  <button id="more-btn"
+    class="hover:text-orange-200 transition flex items-center cursor-pointer">
+    More
+    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+  </button>
 
-                <!-- Dropdown menu -->
-                <div class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Our Team</a>
-                </div>
-            </div>
+  <div id="more-menu"
+    class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
+    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
+  </div>
+</div>
 
             <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
             <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
@@ -68,7 +69,7 @@
     <details class="py-2 border-b">
         <summary class="cursor-pointer font-medium">More</summary>
         <div class="ml-4 mt-2 flex flex-col space-y-2">
-            <a href="team.html" class="hover:text-orange-500">Our Team</a>
+            <a href="team.html" class="hover:text-orange-500">Team</a>
         </div>
     </details>
 

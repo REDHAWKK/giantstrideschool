@@ -31,17 +31,18 @@
             <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="hover:text-orange-200 transition">Portal</a>
 
             <!-- NEW “More” Dropdown -->
-            <div class="relative group">
-                <button class="hover:text-orange-200 transition flex items-center cursor-pointer">
-                    More
-                    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
-                </button>
+<div class="relative">
+  <button id="more-btn"
+    class="hover:text-orange-200 transition flex items-center cursor-pointer">
+    More
+    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+  </button>
 
-                <!-- Dropdown menu -->
-                <div class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
-                </div>
-            </div>
+  <div id="more-menu"
+    class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
+    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Our Team</a>
+  </div>
+</div>
 
             <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
             <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
@@ -148,9 +149,9 @@
                 
                 <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-orange-500">
-                        <img src="http://static.photos/people/320x240/8" alt="Administrator" class="w-full h-full object-cover">
+                        <img src="images/img19.jpg" alt="Administrator" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-xl font-semibold text-center mb-2 text-gray-800">Mrs. Chika Obi</h3>
+                    <h3 class="text-xl font-semibold text-center mb-2 text-gray-800">Mr. David Issa</h3>
                     <p class="text-orange-500 text-center mb-4">School Administrator</p>
                     <p class="text-gray-600 text-center">Ensures the smooth operation of all school activities with efficiency and care.</p>
                 </div>
@@ -186,7 +187,7 @@
                 
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://static.photos/people/320x240/10" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/10" alt="Teacher" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr. Tunde Ojo</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Primary 1 Class Teacher</p>
@@ -195,7 +196,7 @@
                 
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://static.photos/people/320x240/11" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/11" alt="Teacher" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Miss Amina Yusuf</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Primary 3 Class Teacher</p>
@@ -204,7 +205,7 @@
                 
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://static.photos/people/320x240/12" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/12" alt="Teacher" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mrs. Grace Okoro</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Primary 5 Class Teacher</p>
@@ -213,16 +214,16 @@
                 
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://static.photos/people/320x240/13" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="images/img18.png" alt="Teacher" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr. Emeka Nwachukwu</h3>
+                    <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr Oyeneye A.</h3>
                     <p class="text-green-500 text-center text-sm mb-3">ICT & STEM Teacher</p>
                     <p class="text-gray-600 text-center text-sm">Brings technology and innovation into the classroom.</p>
                 </div>
                 
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://static.photos/people/320x240/14" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/14" alt="Teacher" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mrs. Funmi Adegoke</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Creative Arts Teacher</p>
@@ -231,7 +232,7 @@
                 
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://static.photos/people/320x240/15" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="images/img20.png" alt="Teacher" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr. Ahmed Musa</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Physical Education</p>
@@ -240,7 +241,7 @@
                 
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://static.photos/people/320x240/16" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/16" alt="Teacher" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Miss Chinwe Okoli</h3>
                     <p class="text-green-500 text-center text-sm mb-3">French & Language Arts</p>
@@ -261,7 +262,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
                     <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-orange-500">
-                        <img src="http://static.photos/people/320x240/17" alt="Staff" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/17" alt="Staff" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr. Sunday Okonkwo</h3>
                     <p class="text-orange-500 text-center text-sm mb-3">School Nurse</p>
@@ -269,7 +270,7 @@
                 
                 <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-orange-500">
-                        <img src="http://static.photos/people/320x240/18" alt="Staff" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/18" alt="Staff" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mrs. Ronke Adebayo</h3>
                     <p class="text-orange-500 text-center text-sm mb-3">School Secretary</p>
@@ -277,7 +278,7 @@
                 
                 <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-orange-500">
-                        <img src="http://static.photos/people/320x240/19" alt="Staff" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/19" alt="Staff" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr. Ibrahim Bello</h3>
                     <p class="text-orange-500 text-center text-sm mb-3">Facility Manager</p>
@@ -285,7 +286,7 @@
                 
                 <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-orange-500">
-                        <img src="http://static.photos/people/320x240/20" alt="Staff" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/20" alt="Staff" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mrs. Nkechi Eze</h3>
                     <p class="text-orange-500 text-center text-sm mb-3">Librarian</p>
