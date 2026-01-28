@@ -1,16 +1,24 @@
 // news.js (rewritten)
 
 // ---------- Firebase config ----------
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDkhouztH4Qa0RGZdxIr8C3RsUgFYqUs7E",
+//   authDomain: "wine-with-us-database.firebaseapp.com",
+//   projectId: "wine-with-us-database",
+//   storageBucket: "wine-with-us-database.appspot.com",
+//   messagingSenderId: "254154647200",
+//   appId: "1:254154647200:web:87689653adc9af9f5dcbc5",
+//   measurementId: "G-YEBJD2TYYR"
+// };
 const firebaseConfig = {
-  apiKey: "AIzaSyDkhouztH4Qa0RGZdxIr8C3RsUgFYqUs7E",
-  authDomain: "wine-with-us-database.firebaseapp.com",
-  projectId: "wine-with-us-database",
-  storageBucket: "wine-with-us-database.appspot.com",
-  messagingSenderId: "254154647200",
-  appId: "1:254154647200:web:87689653adc9af9f5dcbc5",
-  measurementId: "G-YEBJD2TYYR"
+  apiKey: "AIzaSyCsohqZK4dxStPmiJp7kGpd1RxD8WznCzw",
+  authDomain: "giant-stride-school.firebaseapp.com",
+  projectId: "giant-stride-school",
+  storageBucket: "giant-stride-school.firebasestorage.app",
+  messagingSenderId: "256577414487",
+  appId: "1:256577414487:web:1f611bbf0a5a49e8508a12",
+  measurementId: "G-RV07975KF8"
 };
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
