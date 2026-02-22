@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Room | Giant Stride School</title>
+
+  <!-- Existing styles -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../tailwind.css">
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+<!-- Navigation -->
+<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        
+        <!-- Logo -->
+        <div class="flex items-center space-x-4">
+            <img src="../images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
+            <span class="text-xl font-bold">Giant Stride School</span>
+        </div>
+
+        <!-- Desktop Nav -->
+<div class="hidden lg:flex items-center space-x-8">
+
+
+            <a href="../index.html" class="hover:text-orange-200 transition">Home</a>
+            <a href="about.html" class="hover:text-orange-200 transition">About</a>
+            <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
+            <a href="news.html" class="hover:text-orange-200 transition">News</a>
+            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="hover:text-orange-200 transition">Portal</a>
+
+            <!-- NEW “More” Dropdown -->
+<div class="relative">
+  <button id="more-btn"
+    class="hover:text-orange-200 transition flex items-center cursor-pointer">
+    More
+    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+  </button>
+
+  <div id="more-menu"
+    class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
+    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
+  </div>
+</div>
+
+            <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
+            <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
+            <i data-feather="menu" class="text-white h-8 w-8"></i>
+        </button>
+    </div>
+
+<!-- Mobile Dropdown -->
+<div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
+    <a href="index.html" class="py-2 border-b">Home</a>
+    <a href="about.html" class="py-2 border-b">About</a>
+    <a href="gallery.html" class="py-2 border-b">Gallery</a>
+    <a href="news.html" class="py-2 border-b">News</a>
+    <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
+
+    <!-- Mobile “More” section -->
+    <details class="py-2 border-b">
+        <summary class="font-medium cursor-pointer">More</summary>
+        <div class="ml-4 mt-2 flex flex-col space-y-2">
+            <a href="team.html" class="hover:text-orange-500">Team</a>
+    </details>
+
+    <a href="contact.html" class="py-2 border-b">Contact</a>
+
+    <a href="admission.html" class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
+        Admission
+    </a>
+</div>
+
+</nav>
+    <!-- Hero Section -->
+    <section class="relative pt-14">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <img src="../images/quiz1.png" alt="School Gallery" class="w-full h-96 object-cover">
+ <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+    <div data-aos="fade-up">
+      <h1 id="hero-title" class="text-4xl md:text-5xl font-bold text-white mb-3">
+        Loading Quiz...
+      </h1>
+      <p id="hero-subtitle" class="text-lg md:text-xl text-white">
+        Please answer all questions carefully
+      </p>
+    </div>
+  </div>    </section>
+
+<!-- MAIN -->
+<section class="pt-14 pb-20 ">
+<div id="floating-timer" class="fixed top-20 right-5 w-24 h-24 cursor-move z-50">
+  <svg class="w-24 h-24" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="45" class="stroke-gray-200 stroke-4 fill-none"/>
+    <circle id="timer-progress" cx="50" cy="50" r="45" class="stroke-orange-500 stroke-4 fill-none transform -rotate-90 origin-center" stroke-dasharray="283" stroke-dashoffset="0" style="transition: stroke-dashoffset 1s linear;"/>
+  </svg>
+  <div class="absolute inset-0 flex items-center justify-center text-xl font-bold" id="timer-text">15:00</div>
+</div>  <div class="container mx-auto px-6">
+
+<div id="quiz-modal" class="fixed inset-0 flex items-center justify-center hidden z-50 backdrop-blur-md bg-black/30">
+  <div class="bg-white rounded-2xl p-8 w-80 text-center shadow-lg">
+    <h2 class="text-xl font-bold mb-4">Welcome to the Quiz!</h2>
+    <p class="mb-6">You have <span">10</span> questions.</p>
+    <button id="start-quiz-btn" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-xl cursor-pointer">
+      Start Now
+    </button>
+  </div>
+</div>
+    <!-- QUIZ CONTAINER -->
+    <div id="quiz-container"
+      class="space-y-10">
+      <!-- Questions will be injected here -->
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <div class="mt-10 text-center">
+      <button id="submit-btn"
+        class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition cursor-pointer">
+        Submit Quiz
+      </button>
+    </div>
+
+    <!-- RESULT SECTION -->
+    <div id="result-section"
+      class="hidden mt-10 p-6 bg-green-100 rounded-xl text-green-800 font-semibold text-center">
+    </div>
+
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
+                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education and values for a brighter tomorrow</p>
+                    <div class="flex space-x-4">
+                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
+                        <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Academics</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Quiz For Students</a></li>
+                        <li><a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="text-gray-400 hover:text-orange-400 transition">Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1"></i>
+                            <span>Ajibode Rd, Ota 112104, Ogun State</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="mr-2"></i>
+                            <span>+234 803 808 5876</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2"></i>
+                            <span>giantstrideschool@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
+                <div class="flex space-x-6">
+                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="https://oriarebun-princeton.vercel.app/" target="_blank" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="quiz-data.js"></script>
+<script src="quiz-engine.js"></script>
+<script>
+  // Basic placeholder to show selected topic
+  const cls = localStorage.getItem("quizClass");
+  const subject = localStorage.getItem("quizSubject");
+  const topic = localStorage.getItem("quizTopic");
+
+  if (!cls || !subject || !topic) {
+    window.location.href = "quiz.html";
+  }
+
+document.getElementById("hero-title").textContent =
+  cls.toUpperCase() + " " +
+  subject.toUpperCase() + " - " +
+  topic.toUpperCase();
+
+document.getElementById("hero-subtitle").textContent =
+  "You are attempting the " + topic + " quiz";
+</script>
+<script>
+    const modal = document.getElementById("quiz-modal");
+const startBtn = document.getElementById("start-quiz-btn");
+
+// Show modal
+modal.classList.remove("hidden");
+
+// Start quiz on click
+startBtn.addEventListener("click", () => {
+  modal.classList.add("hidden"); // hide modal
+});
+</script>
+<script>
+    const totalTime = 15 * 60; // 15 minutes in seconds
+let timeLeft = totalTime;
+
+const timerText = document.getElementById("timer-text");
+const timerProgress = document.getElementById("timer-progress");
+
+const radius = 45;
+const circumference = 2 * Math.PI * radius;
+timerProgress.style.strokeDasharray = circumference;
+
+function updateTimer() {
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  timerText.textContent = `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+  
+  const offset = circumference - (timeLeft / totalTime) * circumference;
+  timerProgress.style.strokeDashoffset = offset;
+  
+  if(timeLeft <= 0){
+    clearInterval(timerInterval);
+    // Auto-submit quiz
+    document.getElementById("submit-btn").click();
+  } else {
+    timeLeft--;
+  }
+}
+
+const timerInterval = setInterval(updateTimer, 1000);
+</script>
+<script src="../script.js"></script>
+</body>
+</html>
