@@ -1,289 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Giant Stride School is dedicated to providing quality education and nurturing young minds to build a total child with strong values for a brighter tomorrow. Enroll your child today!">
-    <title>Giant Stride School - Quality Education for Tomorrow's Leaders</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="tailwind.css">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Giant Stride School is dedicated to providing quality education and nurturing young minds to build a total child with strong values for a brighter tomorrow. Enroll your child today!">
+  <title>Giant Stride School - Quality Education for Tomorrow's Leaders</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tailwind.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body class="font-sans bg-gray-50">
-<!-- Navigation -->
-<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
+  <!-- Navigation -->
+  <nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        
-        <!-- Logo -->
-        <div class="flex items-center space-x-4">
-            <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
-            <span class="text-xl font-bold">Giant Stride School</span>
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
+        <span class="text-xl font-bold">Giant Stride School</span>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center space-x-8">
+
+
+        <a href="index.html" class="hover:text-orange-200 transition">Home</a>
+        <a href="about.html" class="hover:text-orange-200 transition">About</a>
+        <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
+        <a href="news.html" class="hover:text-orange-200 transition">News</a>
+        <a href="https://giantstrideschool.intelps.cloud/login" target="_blank"
+          class="hover:text-orange-200 transition">Portal</a>
+
+        <!-- NEW “More” Dropdown -->
+        <div class="relative">
+          <button id="more-btn" class="hover:text-orange-200 transition flex items-center cursor-pointer">
+            More
+            <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+          </button>
+
+          <div id="more-menu" class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
+            <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
+          </div>
         </div>
 
-        <!-- Desktop Nav -->
-<div class="hidden lg:flex items-center space-x-8">
+        <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
+        <a href="admission.html"
+          class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+      </div>
 
-
-            <a href="index.html" class="hover:text-orange-200 transition">Home</a>
-            <a href="about.html" class="hover:text-orange-200 transition">About</a>
-            <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
-            <a href="news.html" class="hover:text-orange-200 transition">News</a>
-            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="hover:text-orange-200 transition">Portal</a>
-
-            <!-- NEW “More” Dropdown -->
-<div class="relative">
-  <button id="more-btn"
-    class="hover:text-orange-200 transition flex items-center cursor-pointer">
-    More
-    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
-  </button>
-
-  <div id="more-menu"
-    class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
-    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
-  </div>
-</div>
-
-            <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
-            <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
-        </div>
-
-        <!-- Hamburger Button -->
-        <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
-            <i data-feather="menu" class="text-white h-8 w-8"></i>
-        </button>
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
+        <i data-feather="menu" class="text-white h-8 w-8"></i>
+      </button>
     </div>
 
-<!-- Mobile Dropdown -->
-<div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
-    <a href="index.html" class="py-2 border-b">Home</a>
-    <a href="about.html" class="py-2 border-b">About</a>
-    <a href="gallery.html" class="py-2 border-b">Gallery</a>
-    <a href="news.html" class="py-2 border-b">News</a>
-    <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
+      <a href="index.html" class="py-2 border-b">Home</a>
+      <a href="about.html" class="py-2 border-b">About</a>
+      <a href="gallery.html" class="py-2 border-b">Gallery</a>
+      <a href="news.html" class="py-2 border-b">News</a>
+      <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
 
-    <!-- Mobile “More” section -->
-    <details class="py-2 border-b">
+      <!-- Mobile “More” section -->
+      <details class="py-2 border-b">
         <summary class="font-medium cursor-pointer">More</summary>
         <div class="ml-4 mt-2 flex flex-col space-y-2">
-            <a href="team.html" class="hover:text-orange-500">Team</a>
-    </details>
+          <a href="team.html" class="hover:text-orange-500">Team</a>
+      </details>
 
-    <a href="contact.html" class="py-2 border-b">Contact</a>
+      <a href="contact.html" class="py-2 border-b">Contact</a>
 
-    <a href="admission.html" class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
+      <a href="admission.html"
+        class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
         Admission
-    </a>
-</div>
-
-</nav>
-
-    <!-- Floating News Text -->
-<div id="news-banner" class="absolute top-[100px] left-0 w-full z-40 cursor-pointer hidden">
-  <span class="text-accent font-bold text-secondary animate-bounce-x">
-   <a href="news.html">Check out the latest news</a>
-  </span>
-</div>
-
-    <!-- Hero Section -->
-    <section class="relative">
-        <div class="absolute inset-0 bg-black opacity-40"></div>
-<video
-  class="w-full h-screen object-cover"
-  autoplay
-  muted
-  loop
-  playsinline>
-  <source src="videos/hero.mp4" type="video/mp4">
-</video>
-
-        <div class="absolute inset-0 flex items-center justify-center text-center px-4">
-            <div data-aos="fade-up">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Leaving A Lasting <span class="text-orange-400">Impression</span></h1>
-                <p class="text-xl text-white max-w-2xl mx-auto mb-8">Nurturing young minds with quality education and values for a brighter tomorrow</p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="admission.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition w-full sm:w-auto text-center">Enroll Now</a>
-                    <a href="about.html" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold transition w-full sm:w-auto text-center">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Our Core Values</h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-orange-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i data-feather="heart" class="text-white h-8 w-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-4 text-orange-600">Compassion</h3>
-                    <p class="text-gray-600 text-center">We teach children to care for others and develop empathy as a fundamental life skill.</p>
-                </div>
-                <div class="bg-green-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i data-feather="award" class="text-white h-8 w-8"></i>
-                    </div>
-<h3 class="text-xl font-semibold text-center mb-4 text-green-600">Excellence</h3>
-<p class="text-gray-600 text-center">
-At Giant Stride School, we nurture excellence by raising confident learners who grow into giants in their chosen fields.
-</p>
-
-                </div>
-                <div class="bg-orange-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i data-feather="users" class="text-white h-8 w-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-4 text-orange-600">Community</h3>
-                    <p class="text-gray-600 text-center">We build a supportive environment where every child feels valued and included.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Proprietor's Message -->
-    <section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-10 md:mb-0" data-aos="fade-right">
-<img src="images/proprietress.png" alt="Proprietress" class="rounded-xl shadow-xl w-80 mx-auto">
-
-                </div>
-                <div class="md:w-2/3 md:pl-12" data-aos="fade-left">
-                    <h2 class="text-3xl font-bold mb-6 text-gray-800">A Message From Our Proprietress</h2>
-                    <blockquote class="text-xl italic mb-6 text-gray-700">
-                        "At Giant Stride School, we believe every child deserves a strong and meaningful start. Through quality learning, care, and strong values, we help our students discover their potential and grow into confident individuals, ready for both school and life."
-                    </blockquote>
-                    <p class="text-gray-600">- Mrs. Moses Adejoke, Founder & Proprietress</p>
-                    <div class="mt-8">
-                        <a href="about.html" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition">
-                            Read More About Our Vision
-                            <i data-feather="arrow-right" class="ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Why Choose Us -->
-<section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">
-            Why Parents Choose Giant Stride School
-        </h2>
-
-        <div class="grid lg:grid-cols-3 gap-10">
-
-            <!-- Card 1 -->
-            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
-                <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                    <i data-feather="award" class="text-white h-8 w-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Raising GIANTS</h3>
-                <p class="text-gray-600 text-center">
-                    We are committed to nurturing confident, exceptional learners.  
-                    At Giant Stride School, every child is trained to stand out, lead, and become a true “Giant” in academics, character, and creativity.
-                </p>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
-                <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                    <i data-feather="users" class="text-white h-8 w-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Dedicated & Inspiring Teachers</h3>
-                <p class="text-gray-600 text-center">
-                    Our teachers don’t just teach, they mentor, inspire, and guide students to exceed expectations.  
-                    Their passion drives our consistent success in competitions and academic performance.
-                </p>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
-                <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                    <i data-feather="shield" class="text-white h-8 w-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">A Safe & Supportive Home</h3>
-                <p class="text-gray-600 text-center">
-                    Our school environment is structured to build confidence, discipline, and belonging.  
-                    Every Giant learns in a place where they feel protected, motivated, and valued.
-                </p>
-            </div>
-
-        </div>
+      </a>
     </div>
-</section>
 
-    <!-- Student Achievement Highlight -->
-<section class="py-20 bg-white">
-  <div class="container mx-auto px-6">
-    <div class="flex flex-col md:flex-row items-center gap-12">
+  </nav>
 
-      <!-- TEXT SIDE -->
-<div class="md:w-1/2" data-aos="fade-right">
-  <span class="inline-block mb-4 px-4 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-    Student Excellence
-  </span>
-
-  <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-    Leaving a Lasting Impression Through Excellence
-  </h2>
-
-  <p class="text-gray-600 mb-6 leading-relaxed">
-    At Giant Stride School, our learners consistently excel in academic competitions
-    and scholarship examinations. From mathematics championships to full scholarship
-    awards, we equip our pupils with the confidence, discipline, and skill to succeed
-    at the highest levels.
-  </p>
-
-  <div class="flex items-center mb-8">
-    <i data-feather="award" class="text-orange-500 mr-3"></i>
-    <span class="text-gray-700 font-medium">
-      Multiple Competition Winners & Scholarship Recipients
+  <!-- Floating News Text -->
+  <div id="news-banner" class="absolute top-[100px] left-0 w-full z-40 cursor-pointer hidden">
+    <span class="text-accent font-bold text-secondary animate-bounce-x">
+      <a href="news.html">Check out the latest news</a>
     </span>
   </div>
 
-  <a href="gallery.html"
-     class="inline-flex items-center text-white bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-full font-semibold transition">
-    Discover Our Achievements
-    <i data-feather="arrow-right" class="ml-2"></i>
-  </a>
-</div>
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+    <video class="w-full h-screen object-cover" autoplay muted loop playsinline>
+      <source src="videos/hero.mp4" type="video/mp4">
+    </video>
 
+    <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+      <div data-aos="fade-up">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Leaving A Lasting <span
+            class="text-orange-400">Impression</span></h1>
+        <p class="text-xl text-white max-w-2xl mx-auto mb-8">Nurturing young minds with quality education and values for
+          a brighter tomorrow</p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="admission.html"
+            class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition w-full sm:w-auto text-center">Enroll
+            Now</a>
+          <a href="about.html"
+            class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold transition w-full sm:w-auto text-center">Learn
+            More</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <!-- IMAGE SIDE -->
-      <div class="md:w-1/2" data-aos="fade-left">
-        <div class="relative">
-          <img src="images/img2.png"
-               alt="Giant Stride School Mathematics Award"
-               class="rounded-2xl shadow-2xl w-full object-cover float-award">
+  <!-- Values Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Our Core Values</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-orange-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+          data-aos-delay="100">
+          <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i data-feather="heart" class="text-white h-8 w-8"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-4 text-orange-600">Compassion</h3>
+          <p class="text-gray-600 text-center">We teach children to care for others and develop empathy as a fundamental
+            life skill.</p>
+        </div>
+        <div class="bg-green-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+          data-aos-delay="200">
+          <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i data-feather="award" class="text-white h-8 w-8"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-4 text-green-600">Excellence</h3>
+          <p class="text-gray-600 text-center">
+            At Giant Stride School, we nurture excellence by raising confident learners who grow into giants in their
+            chosen fields.
+          </p>
 
-          <!-- Optional overlay badge -->
-          <div class="absolute -bottom-4 -left-4 bg-white px-5 py-3 rounded-xl shadow-lg">
-            <p class="text-sm font-semibold text-gray-800">
-              🏆 Mathematics Excellence
-            </p>
+        </div>
+        <div class="bg-orange-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+          data-aos-delay="300">
+          <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i data-feather="users" class="text-white h-8 w-8"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-4 text-orange-600">Community</h3>
+          <p class="text-gray-600 text-center">We build a supportive environment where every child feels valued and
+            included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proprietor's Message -->
+  <section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/3 mb-10 md:mb-0" data-aos="fade-right">
+          <img src="images/proprietress.png" alt="Proprietress" class="rounded-xl shadow-xl w-80 mx-auto">
+
+        </div>
+        <div class="md:w-2/3 md:pl-12" data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-6 text-gray-800">A Message From Our Proprietress</h2>
+          <blockquote class="text-xl italic mb-6 text-gray-700">
+            "At Giant Stride School, we believe every child deserves a strong and meaningful start. Through quality
+            learning, care, and strong values, we help our students discover their potential and grow into confident
+            individuals, ready for both school and life."
+          </blockquote>
+          <p class="text-gray-600">- Mrs. Moses Adejoke, Founder & Proprietress</p>
+          <div class="mt-8">
+            <a href="about.html"
+              class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition">
+              Read More About Our Vision
+              <i data-feather="arrow-right" class="ml-2"></i>
+            </a>
           </div>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Testimonials -->
-<section class="py-20 bg-white">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">
-      What Parents Say
-    </h2>
+  <!-- Why Choose Us -->
+  <section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">
+        Why Parents Choose Giant Stride School
+      </h2>
 
-    <div class="grid gap-10 lg:grid-cols-3">
+      <div class="grid lg:grid-cols-3 gap-10">
 
-      <!-- Card 1
+        <!-- Card 1 -->
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
+          <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i data-feather="award" class="text-white h-8 w-8"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Raising GIANTS</h3>
+          <p class="text-gray-600 text-center">
+            We are committed to nurturing confident, exceptional learners.
+            At Giant Stride School, every child is trained to stand out, lead, and become a true “Giant” in academics,
+            character, and creativity.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+          data-aos-delay="100">
+          <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i data-feather="users" class="text-white h-8 w-8"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Dedicated & Inspiring Teachers</h3>
+          <p class="text-gray-600 text-center">
+            Our teachers don’t just teach, they mentor, inspire, and guide students to exceed expectations.
+            Their passion drives our consistent success in competitions and academic performance.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+          data-aos-delay="200">
+          <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i data-feather="shield" class="text-white h-8 w-8"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">A Safe & Supportive Home</h3>
+          <p class="text-gray-600 text-center">
+            Our school environment is structured to build confidence, discipline, and belonging.
+            Every Giant learns in a place where they feel protected, motivated, and valued.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Achievement Highlight -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+
+        <!-- TEXT SIDE -->
+        <div class="md:w-1/2" data-aos="fade-right">
+          <span class="inline-block mb-4 px-4 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+            Student Excellence
+          </span>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+            Leaving a Lasting Impression Through Excellence
+          </h2>
+
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            At Giant Stride School, our learners consistently excel in academic competitions
+            and scholarship examinations. From mathematics championships to full scholarship
+            awards, we equip our pupils with the confidence, discipline, and skill to succeed
+            at the highest levels.
+          </p>
+
+          <div class="flex items-center mb-8">
+            <i data-feather="award" class="text-orange-500 mr-3"></i>
+            <span class="text-gray-700 font-medium">
+              Multiple Competition Winners & Scholarship Recipients
+            </span>
+          </div>
+
+          <a href="gallery.html"
+            class="inline-flex items-center text-white bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-full font-semibold transition">
+            Discover Our Achievements
+            <i data-feather="arrow-right" class="ml-2"></i>
+          </a>
+        </div>
+
+
+        <!-- IMAGE SIDE -->
+        <div class="md:w-1/2" data-aos="fade-left">
+          <div class="relative">
+            <img src="images/img2.png" alt="Giant Stride School Mathematics Award"
+              class="rounded-2xl shadow-2xl w-full object-cover float-award">
+
+            <!-- Optional overlay badge -->
+            <div class="absolute -bottom-4 -left-4 bg-white px-5 py-3 rounded-xl shadow-lg">
+              <p class="text-sm font-semibold text-gray-800">
+                🏆 Mathematics Excellence
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">
+        What Parents Say
+      </h2>
+
+      <div class="grid gap-10 lg:grid-cols-3">
+
+        <!-- Card 1
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
         <img 
           src="images/Parent1.png"
@@ -302,256 +318,254 @@ At Giant Stride School, we nurture excellence by raising confident learners who 
           </p>
         </div>
       </div> -->
-      <!-- Card 1 -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-        <img 
-          src="images/parent1.png"
-          alt="Parent"
-          class="w-full h-64 object-cover"
-        />
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/parent1.png" alt="Parent" class="w-full h-64 object-cover" />
 
-        <div class="p-6 text-center">
-          <p class="text-gray-600 italic mb-6">
-Giant Stride is a nurturing citadel. Enroll your child and relax — they bring out the best academically, morally, and spiritually.
-          </p>
+          <div class="p-6 text-center">
+            <p class="text-gray-600 italic mb-6">
+              Giant Stride is a nurturing citadel. Enroll your child and relax — they bring out the best academically,
+              morally, and spiritually.
+            </p>
 
-          <h4 class="font-semibold text-gray-800">Mrs. Aruna</h4>
-          <p class="text-sm text-gray-500">
-            Parent
-          </p>
+            <h4 class="font-semibold text-gray-800">Mrs. Aruna</h4>
+            <p class="text-sm text-gray-500">
+              Parent
+            </p>
+          </div>
         </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/parent2.png" alt="Parent" class="w-full h-64 object-cover" />
+
+          <div class="p-6 text-center">
+            <p class="text-gray-600 italic mb-6">
+              At Giant Stride, where dreams become reality, my son became a national champion in both English and STEM.
+              Winning TUMA and ANMC has given him immense confidence.”
+            </p>
+
+            <h4 class="font-semibold text-gray-800">Mrs. Ogunbiyi</h4>
+            <p class="text-sm text-gray-500">
+              Parent of OgunbiyI Abdulsamad - Multi Million Naira Scholarship Winner(ex-pupil)
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/parent4.png" alt="Parent" class="w-full h-64 object-cover" />
+
+          <div class="p-6 text-center">
+            <p class="text-gray-600 italic mb-6">
+              “As a pioneer parent, I'm grateful my two children attended Giant Stride School. The exceptional teaching
+              enabled them to compete in national math and science competitions, which led to a 50% secondary school
+              scholarship. They are now top students, thanks to the strong foundation built here.
+
+              Thank you to the entire Giant Stride team.”
+            </p>
+
+            <h4 class="font-semibold text-gray-800">Mrs. Ogunsanya Iroro</h4>
+            <p class="text-sm text-gray-500">
+              Parent of ex-pupil
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Preview -->
+  <section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
+    <div class="container mx-auto px-6">
+
+      <!-- Section header -->
+      <div class="text-center mb-14" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Life at Giant Stride School
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          A glimpse into our classrooms, competitions, and joyful moments that shape confident future giants.
+        </p>
       </div>
 
-      <!-- Card 2 -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-        <img 
-          src="images/parent2.png"
-          alt="Parent"
-          class="w-full h-64 object-cover"
-        />
+      <!-- Image Grid -->
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-        <div class="p-6 text-center">
-          <p class="text-gray-600 italic mb-6">
-            At Giant Stride, where dreams become reality, my son became a national champion in both English and STEM. Winning TUMA and ANMC has given him immense confidence.”
-          </p>
-
-          <h4 class="font-semibold text-gray-800">Mrs. Ogunbiyi</h4>
-          <p class="text-sm text-gray-500">
-Parent of OgunbiyI Abdulsamad - Multi Million Naira Scholarship Winner(ex-pupil)
-          </p>
+        <!-- Image 1 -->
+        <div data-aos="fade-up">
+          <img src="images/img2.png" alt="Gallery image" title="Our winner of multiple awards"
+            class="w-full h-64 object-cover rounded-xl shadow-md hover:shadow-xl transition cursor-pointer">
         </div>
+
+        <!-- Image 2 -->
+        <div data-aos="fade-up" data-aos-delay="100">
+          <img src="images/img7.png" alt="Gallery image" title="Our mathematics giant"
+            class="w-full h-64 object-cover rounded-xl shadow-md hover:shadow-xl transition cursor-pointer">
+        </div>
+
+        <!-- Image 3 -->
+        <div data-aos="fade-up" data-aos-delay="400">
+          <img src="images/img12.jpg" alt="Gallery image" title="Learning Instruments"
+            class="w-full h-64 object-cover rounded-xl shadow-md hover:shadow-xl transition cursor-pointer">
+        </div>
+
       </div>
 
-      <!-- Card 3 -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-        <img 
-          src="images/parent4.png"
-          alt="Parent"
-          class="w-full h-64 object-cover"
-        />
-
-        <div class="p-6 text-center">
-          <p class="text-gray-600 italic mb-6">
-            “As a pioneer parent, I'm grateful my two children attended Giant Stride School. The exceptional teaching enabled them to compete in national math and science competitions, which led to a 50% secondary school scholarship. They are now top students, thanks to the strong foundation built here.
-
-Thank you to the entire Giant Stride team.”
-          </p>
-
-          <h4 class="font-semibold text-gray-800">Mrs. Ogunsanya Iroro</h4>
-          <p class="text-sm text-gray-500">
-            Parent of ex-pupil
-          </p>
-        </div>
+      <!-- CTA -->
+      <div class="flex justify-center mt-14" data-aos="fade-up">
+        <a href="gallery.html"
+          class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow-md transition">
+          See Full Gallery
+          <i data-feather="arrow-right"></i>
+        </a>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Gallery Preview -->
-<section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
-  <div class="container mx-auto px-6">
-
-    <!-- Section header -->
-    <div class="text-center mb-14" data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4">
-        Life at Giant Stride School
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        A glimpse into our classrooms, competitions, and joyful moments that shape confident future giants.
-      </p>
-    </div>
-
-    <!-- Image Grid -->
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-      <!-- Image 1 -->
-      <div data-aos="fade-up">
-        <img src="images/img2.png"
-             alt="Gallery image"
-             title="Our winner of multiple awards"
-             class="w-full h-64 object-cover rounded-xl shadow-md hover:shadow-xl transition cursor-pointer">
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-orange-500 to-green-500 text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8" data-aos="fade-up">Ready to Give Your Child the Best Start?</h2>
+      <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Join our community of happy
+        learners and watch your child thrive.</p>
+      <div class=" flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="200">
+        <a href="admission.html"
+          class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition">Schedule
+          a Visit</a>
+        <a href="contact.html"
+          class="bg-transparent border-2 border-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-full font-semibold inline-block transition">Contact
+          Us</a>
       </div>
-
-      <!-- Image 2 -->
-      <div data-aos="fade-up" data-aos-delay="100">
-        <img src="images/img7.png"
-             alt="Gallery image"
-             title="Our mathematics giant"
-             class="w-full h-64 object-cover rounded-xl shadow-md hover:shadow-xl transition cursor-pointer">
-      </div>
-
-      <!-- Image 3 -->
-      <div data-aos="fade-up" data-aos-delay="400">
-        <img src="images/img12.jpg"
-             alt="Gallery image"
-             title="Learning Instruments"        
-             class="w-full h-64 object-cover rounded-xl shadow-md hover:shadow-xl transition cursor-pointer">
-      </div>
-
     </div>
+  </section>
 
-    <!-- CTA -->
-    <div class="flex justify-center mt-14" data-aos="fade-up">
-      <a href="gallery.html"
-         class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow-md transition">
-        See Full Gallery
-        <i data-feather="arrow-right"></i>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-orange-500 to-green-500 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8" data-aos="fade-up">Ready to Give Your Child the Best Start?</h2>
-            <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Join our community of happy learners and watch your child thrive.</p>
-            <div class=" flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="200">
-                <a href="admission.html" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition">Schedule a Visit</a>
-                <a href="contact.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-full font-semibold inline-block transition">Contact Us</a>
-            </div>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
+          <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education
+            and values for a brighter tomorrow</p>
+          <div class="flex space-x-4">
+            <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank"
+              class="text-gray-400 hover:text-orange-400 transition">
+              <i data-feather="facebook"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+              <i data-feather="twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+              <i data-feather="instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+              <i data-feather="youtube"></i>
+            </a>
+          </div>
         </div>
-    </section>
+        <div>
+          <h4 class="font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
+            <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
+            <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
+            <li><a href="privacy.html" class="text-gray-400 hover:text-orange-400 transition">Privacy Policy</a></li>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-4 gap-10 mb-12">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
-                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education and values for a brighter tomorrow</p>
-                    <div class="flex space-x-4">
-                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank" class="text-gray-400 hover:text-orange-400 transition">
-                            <i data-feather="facebook"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
-                            <i data-feather="twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
-                            <i data-feather="instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
-                            <i data-feather="youtube"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
-                        <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
-                        <li><a href="privacy.html" class="text-gray-400 hover:text-orange-400 transition">Privacy Policy</a></li>
-
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Academics</h4>
-                    <ul class="space-y-2">
-                        <li><a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="text-gray-400 hover:text-orange-400 transition">Portal</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Contact Us</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-start">
-                            <i data-feather="map-pin" class="mr-2 mt-1"></i>
-                            <span>Ajibode Rd, Ota 112104, Ogun State</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="phone" class="mr-2"></i>
-                            <span>+234 803 808 5876</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="mail" class="mr-2"></i>
-                            <span>giantstrideschool@gmail.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
-                <div class="flex space-x-6">
-                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="https://oriarebun-princeton.vercel.app/" target="_blank" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
-                </div>
-            </div>
+          </ul>
         </div>
-    </footer>
-        <!-- Firebase v8 (namespaced) -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-   <script src="main.js"></script>
-   <script>
-        // ---------- Firebase config ----------
-const firebaseConfig = {
-  apiKey: "AIzaSyDkhouztH4Qa0RGZdxIr8C3RsUgFYqUs7E",
-  authDomain: "wine-with-us-database.firebaseapp.com",
-  projectId: "wine-with-us-database",
-  storageBucket: "wine-with-us-database.appspot.com",
-  messagingSenderId: "254154647200",
-  appId: "1:254154647200:web:87689653adc9af9f5dcbc5",
-  measurementId: "G-YEBJD2TYYR"
-};
-      // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-   </script>
+        <div>
+          <h4 class="font-bold mb-4">Academics</h4>
+          <ul class="space-y-2">
+            <li><a href="https://giantstrideschool.intelps.cloud/login" target="_blank"
+                class="text-gray-400 hover:text-orange-400 transition">Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Contact Us</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-start">
+              <i data-feather="map-pin" class="mr-2 mt-1"></i>
+              <span>Ajibode Rd, Ota 112104, Ogun State</span>
+            </li>
+            <li class="flex items-center">
+              <i data-feather="phone" class="mr-2"></i>
+              <span>+234 803 808 5876</span>
+            </li>
+            <li class="flex items-center">
+              <i data-feather="mail" class="mr-2"></i>
+              <span>giantstrideschool@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights
+          reserved.</p>
+        <div class="flex space-x-6">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a
+              href="https://oriarebun-princeton.vercel.app/" target="_blank"
+              class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Firebase v8 (namespaced) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // ---------- Firebase config ----------
+    const firebaseConfig = {
+      apiKey: "AIzaSyDkhouztH4Qa0RGZdxIr8C3RsUgFYqUs7E",
+      authDomain: "wine-with-us-database.firebaseapp.com",
+      projectId: "wine-with-us-database",
+      storageBucket: "wine-with-us-database.appspot.com",
+      messagingSenderId: "254154647200",
+      appId: "1:254154647200:web:87689653adc9af9f5dcbc5",
+      measurementId: "G-YEBJD2TYYR"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 
-   <script>
-  async function checkForNewPosts() {
-    try {
-      const db = firebase.firestore();
-      const snap = await db.collection("news")
-        .orderBy("createdAt", "desc")
-        .limit(1)
-        .get();
+  <script>
+    async function checkForNewPosts() {
+      try {
+        const db = firebase.firestore();
+        const snap = await db.collection("news")
+          .orderBy("createdAt", "desc")
+          .limit(1)
+          .get();
 
-      if (snap.empty) return;
+        if (snap.empty) return;
 
-      const latest = snap.docs[0].data();
-      const latestTime = latest.createdAt?.toMillis() || 0;
+        const latest = snap.docs[0].data();
+        const latestTime = latest.createdAt?.toMillis() || 0;
 
-      const lastSeen = parseInt(localStorage.getItem("lastSeenPost") || "0", 10);
-      console.log("Latest:", latestTime, "Last seen:", lastSeen);
+        const lastSeen = parseInt(localStorage.getItem("lastSeenPost") || "0", 10);
+        console.log("Latest:", latestTime, "Last seen:", lastSeen);
 
-      if (latestTime > lastSeen) {
-        document.getElementById("news-banner").classList.remove("hidden");
-      } else {
-        document.getElementById("news-banner").classList.add("hidden");
+        if (latestTime > lastSeen) {
+          document.getElementById("news-banner").classList.remove("hidden");
+        } else {
+          document.getElementById("news-banner").classList.add("hidden");
+        }
+      } catch (err) {
+        console.error("Error checking new posts:", err);
       }
-    } catch (err) {
-      console.error("Error checking new posts:", err);
     }
-  }
 
-  document.addEventListener("DOMContentLoaded", checkForNewPosts);
-   </script>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    document.addEventListener("DOMContentLoaded", checkForNewPosts);
+  </script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </body>
+
 </html>
