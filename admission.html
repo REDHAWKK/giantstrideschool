@@ -1,86 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Apply for admission to Giant Stride School. Learn about our admission process, requirements, and how to enroll your child in our quality education programs.">
+    <meta name="description"
+        content="Apply for admission to Giant Stride School. Learn about our admission process, requirements, and how to enroll your child in our quality education programs.">
     <title>Admissions | Giant Stride School - Quality Education for Tomorrow's Leaders</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="tailwind.css">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
 
 </head>
 
 <body class="font-sans bg-gray-50">
-<!-- Navigation -->
-<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        
-        <!-- Logo -->
-        <div class="flex items-center space-x-4">
-            <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
-            <span class="text-xl font-bold">Giant Stride School</span>
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
+                <span class="text-xl font-bold">Giant Stride School</span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center space-x-8">
+
+
+                <a href="index.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="home" class="w-4 h-4"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="about.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="info" class="w-4 h-4"></i>
+                    <span>About</span>
+                </a>
+
+                <a href="news.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="file-text" class="w-4 h-4"></i>
+                    <span>News</span>
+                </a>
+
+                <!-- More Dropdown -->
+                <div class="relative">
+                    <button id="more-btn" class="hover:text-orange-200 transition flex items-center cursor-pointer">
+                        More
+                        <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </button>
+
+                    <div id="more-menu" class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
+                        <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-green-100">Gallery</a>
+                        <a href="https://giantstrideschool.intelps.cloud/login"
+                            class="block px-4 py-2 hover:bg-green-100">
+                            Portal</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="mail" class="w-4 h-4"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="admission.html"
+                    class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
+                <i data-feather="menu" class="text-white h-8 w-8"></i>
+            </button>
         </div>
 
-        <!-- Desktop Nav -->
-<div class="hidden lg:flex items-center space-x-8">
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
+            <a href="index.html" class="py-2 border-b">Home</a>
+            <a href="about.html" class="py-2 border-b">About</a>
+            <a href="gallery.html" class="py-2 border-b">Gallery</a>
+            <a href="news.html" class="py-2 border-b">News</a>
+            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
 
+            <!-- Mobile “More” section -->
+            <details class="py-2 border-b">
+                <summary class="font-medium cursor-pointer">More</summary>
+                <div class="ml-4 mt-2 flex flex-col space-y-2">
+                    <a href="team.html" class="hover:text-orange-500">Team</a>
+            </details>
 
-            <a href="index.html" class="hover:text-orange-200 transition">Home</a>
-            <a href="about.html" class="hover:text-orange-200 transition">About</a>
-            <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
-            <a href="news.html" class="hover:text-orange-200 transition">News</a>
-            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="hover:text-orange-200 transition">Portal</a>
+            <a href="contact.html" class="py-2 border-b">Contact</a>
 
-            <!-- NEW “More” Dropdown -->
-<div class="relative">
-  <button id="more-btn"
-    class="hover:text-orange-200 transition flex items-center cursor-pointer">
-    More
-    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
-  </button>
-
-  <div id="more-menu"
-    class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
-    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
-  </div>
-</div>
-
-            <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
-            <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            <a href="admission.html"
+                class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
+                Admission
+            </a>
         </div>
 
-        <!-- Hamburger Button -->
-        <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
-            <i data-feather="menu" class="text-white h-8 w-8"></i>
-        </button>
-    </div>
-
-<!-- Mobile Dropdown -->
-<div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
-    <a href="index.html" class="py-2 border-b">Home</a>
-    <a href="about.html" class="py-2 border-b">About</a>
-    <a href="gallery.html" class="py-2 border-b">Gallery</a>
-    <a href="news.html" class="py-2 border-b">News</a>
-    <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
-
-    <!-- Mobile “More” section -->
-    <details class="py-2 border-b">
-        <summary class="font-medium cursor-pointer">More</summary>
-        <div class="ml-4 mt-2 flex flex-col space-y-2">
-            <a href="team.html" class="hover:text-orange-500">Team</a>
-    </details>
-
-    <a href="contact.html" class="py-2 border-b">Contact</a>
-
-    <a href="admission.html" class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
-        Admission
-    </a>
-</div>
-
-</nav>
+    </nav>
     <!-- Hero Section -->
     <section class="relative pt-16">
         <div class="absolute inset-0 bg-black opacity-40"></div>
@@ -89,7 +108,8 @@
             <div data-aos="fade-up">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Admission Process</h1>
                 <div class="text-xl text-white">
-                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span class="text-orange-300">Admission</span>
+                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span
+                        class="text-orange-300">Admission</span>
                 </div>
             </div>
         </div>
@@ -102,210 +122,198 @@
             <div class="max-w-4xl mx-auto">
                 <div class="flex flex-col md:flex-row mb-12" data-aos="fade-up">
                     <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-                        <div class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+                        <div
+                            class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">
+                            1</div>
                     </div>
                     <div class="md:w-3/4">
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">Submit Application</h3>
-                        <p class="text-gray-600">Complete our online application form or visit the school to collect a physical form.</p> 
-                        <a href="#form" class="inline-flex bg-orange-500 rounded-full py-3 px-8 inline-block mt-6 text-black">Apply
-                                      <i data-feather="arrow-down" class="ml-2"></i>
+                        <p class="text-gray-600">Complete our online application form or visit the school to collect a
+                            physical form.</p>
+                        <a href="#form"
+                            class="inline-flex bg-orange-500 rounded-full py-3 px-8 inline-block mt-6 text-black">Apply
+                            <i data-feather="arrow-down" class="ml-2"></i>
                         </a>
-                       
+
                     </div>
-                    
+
                 </div>
-                
+
                 <div class="flex flex-col md:flex-row mb-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-                        <div class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+                        <div
+                            class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">
+                            2</div>
                     </div>
                     <div class="md:w-3/4">
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">Entrance Assessment</h3>
-                        <p class="text-gray-600">For admission into certain classes, your child will be required to take an age-appropriate assessment to evaluate their readiness. This helps us understand how we can best support their learning journey.</p>
+                        <p class="text-gray-600">For admission into certain classes, your child will be required to take
+                            an age-appropriate assessment to evaluate their readiness. This helps us understand how we
+                            can best support their learning journey.</p>
                     </div>
                 </div>
-                
+
                 <div class="flex flex-col md:flex-row mb-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-                        <div class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+                        <div
+                            class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">
+                            3</div>
                     </div>
                     <div class="md:w-3/4">
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">Interview</h3>
-                        <p class="text-gray-600">After the assessment, we invite both parents and the prospective student for an interview with our Head of School. This helps us get to know your family better and ensures we're a good fit for each other.</p>
+                        <p class="text-gray-600">After the assessment, we invite both parents and the prospective
+                            student for an interview with our Head of School. This helps us get to know your family
+                            better and ensures we're a good fit for each other.</p>
                     </div>
                 </div>
-                
+
                 <div class="flex flex-col md:flex-row" data-aos="fade-up" data-aos-delay="300">
                     <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-                        <div class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+                        <div
+                            class="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">
+                            4</div>
                     </div>
                     <div class="md:w-3/4">
                         <h3 class="text-xl font-semibold mb-4 text-gray-800">Acceptance & Enrollment</h3>
-                        <p class="text-gray-600">Successful applicants will receive an acceptance letter. To secure your child's place, you'll need to complete the enrollment process by submitting all required documents and paying the necessary fees.</p>
+                        <p class="text-gray-600">Successful applicants will receive an acceptance letter. To secure your
+                            child's place, you'll need to complete the enrollment process by submitting all required
+                            documents and paying the necessary fees.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<!-- Admission Form -->
-<section class="py-20 bg-white" id="form">
-    <div class="container mx-auto px-6 max-w-3xl" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Online Application Form</h2>
-<form 
-  action="https://submit-form.com/XpEhGQSfg"
-  method="POST"
-  class="bg-gray-50 p-8 rounded-xl shadow-lg space-y-6"
->
+    <!-- Admission Form -->
+    <section class="py-20 bg-white" id="form">
+        <div class="container mx-auto px-6 max-w-3xl" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Online Application Form</h2>
+            <form action="https://submit-form.com/XpEhGQSfg" method="POST"
+                class="bg-gray-50 p-8 rounded-xl shadow-lg space-y-6">
 
-  <!-- Child's Full Name -->
-  <div>
-    <label for="childName" class="block text-gray-700 font-medium mb-2">
-      Child's Full Name
-    </label>
-    <input 
-      type="text" 
-      id="childName" 
-      name="childName" 
-      required
-      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-    >
-  </div>
+                <!-- Child's Full Name -->
+                <div>
+                    <label for="childName" class="block text-gray-700 font-medium mb-2">
+                        Child's Full Name
+                    </label>
+                    <input type="text" id="childName" name="childName" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                </div>
 
-  <!-- Parent's Full Name -->
-  <div>
-    <label for="parentName" class="block text-gray-700 font-medium mb-2">
-      Parent's Full Name
-    </label>
-    <input 
-      type="text" 
-      id="parentName" 
-      name="parentName" 
-      required
-      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-    >
-  </div>
+                <!-- Parent's Full Name -->
+                <div>
+                    <label for="parentName" class="block text-gray-700 font-medium mb-2">
+                        Parent's Full Name
+                    </label>
+                    <input type="text" id="parentName" name="parentName" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                </div>
 
-  <!-- Choose a Class -->
-  <div>
-    <label for="classChoice" class="block text-gray-700 font-medium mb-2">
-      Choose a Class
-    </label>
-    <select 
-      id="classChoice" 
-      name="classChoice" 
-      required
-      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent cursor-pointer"
-    >
-      <option value="">-- Select Class --</option>
-      <option value="Nursery 1">Nursery 1</option>
-      <option value="Nursery 2">Nursery 2</option>
-      <option value="Kindergarten">Kindergarten</option>
-      <option value="Primary 1">Primary 1</option>
-      <option value="Primary 2">Primary 2</option>
-      <option value="Primary 3">Primary 3</option>
-      <option value="Primary 4">Primary 4</option>
-      <option value="Primary 5">Primary 5</option>
-      <option value="JSS 1">JSS 1</option>
-      <option value="JSS 2">JSS 2</option>
-      <option value="JSS 3">JSS 3</option>
-    </select>
-  </div>
+                <!-- Choose a Class -->
+                <div>
+                    <label for="classChoice" class="block text-gray-700 font-medium mb-2">
+                        Choose a Class
+                    </label>
+                    <select id="classChoice" name="classChoice" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent cursor-pointer">
+                        <option value="">-- Select Class --</option>
+                        <option value="Nursery 1">Nursery 1</option>
+                        <option value="Nursery 2">Nursery 2</option>
+                        <option value="Kindergarten">Kindergarten</option>
+                        <option value="Primary 1">Primary 1</option>
+                        <option value="Primary 2">Primary 2</option>
+                        <option value="Primary 3">Primary 3</option>
+                        <option value="Primary 4">Primary 4</option>
+                        <option value="Primary 5">Primary 5</option>
+                        <option value="JSS 1">JSS 1</option>
+                        <option value="JSS 2">JSS 2</option>
+                        <option value="JSS 3">JSS 3</option>
+                    </select>
+                </div>
 
-  <!-- WhatsApp Number -->
-  <div>
-    <label for="whatsapp" class="block text-gray-700 font-medium mb-2">
-      WhatsApp Number
-    </label>
-    <input 
-      type="tel" 
-      id="whatsapp" 
-      name="whatsapp" 
-      required
-      placeholder="+234..."
-      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-    >
-  </div>
+                <!-- WhatsApp Number -->
+                <div>
+                    <label for="whatsapp" class="block text-gray-700 font-medium mb-2">
+                        WhatsApp Number
+                    </label>
+                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+234..."
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                </div>
 
-  <!-- Email Address -->
-  <div>
-    <label for="email" class="block text-gray-700 font-medium mb-2">
-      Email Address
-    </label>
-    <input 
-      type="email" 
-      id="email" 
-      name="email" 
-      required
-      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-    >
-  </div>
+                <!-- Email Address -->
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium mb-2">
+                        Email Address
+                    </label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                </div>
 
-<div>
-<label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-<textarea id="message" name="message" required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Your message here..."></textarea>
-</div>
-  <!-- Submit Button -->
-  <div class="text-center">
-    <button 
-      type="submit"
-      class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition cursor-pointer"
-    >
-      Submit Application
-    </button>
-  </div>
+                <div>
+                    <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                    <textarea id="message" name="message" required rows="4"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                        placeholder="Your message here..."></textarea>
+                </div>
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition cursor-pointer">
+                        Submit Application
+                    </button>
+                </div>
 
-</form>
+            </form>
 
 
 
-    </div>
-</section>
-<!-- Fees Value Card -->
-<section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
-  <div class="container mx-auto px-6">
-
-    <div class="max-w-xl mx-auto" data-aos="fade-up">
-      <div class="bg-white rounded-2xl shadow-xl p-10 text-center relative overflow-hidden">
-
-        <!-- Decorative Accent -->
-        <div class="absolute -top-10 -right-10 w-24 h-24 bg-orange-100 rounded-full"></div>
-        <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-green-100 rounded-full"></div>
-
-        <!-- Icon -->
-        <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-orange-500 flex items-center justify-center">
-          <i data-feather="credit-card" class="text-white w-8 h-8"></i>
         </div>
+    </section>
+    <!-- Fees Value Card -->
+    <section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
+        <div class="container mx-auto px-6">
 
-        <!-- Heading -->
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">
-          Affordable Fees, Exceptional Value
-        </h2>
+            <div class="max-w-xl mx-auto" data-aos="fade-up">
+                <div class="bg-white rounded-2xl shadow-xl p-10 text-center relative overflow-hidden">
 
-        <!-- Message -->
-        <p class="text-gray-600 leading-relaxed mb-6">
-          At <strong>Giant Stride School</strong>, we believe quality education should be
-          <span class="text-green-600 font-semibold">accessible</span>.
-          Our fees are carefully structured to remain affordable while delivering
-          outstanding teaching, modern learning methods, and a nurturing environment.
-        </p>
+                    <!-- Decorative Accent -->
+                    <div class="absolute -top-10 -right-10 w-24 h-24 bg-orange-100 rounded-full"></div>
+                    <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-green-100 rounded-full"></div>
 
-        <!-- Call to Action -->
-        <a href="contact.html"
-           class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition">
-          Enquire About Fees
-          <i data-feather="arrow-right" class="ml-2"></i>
-        </a>
+                    <!-- Icon -->
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-orange-500 flex items-center justify-center">
+                        <i data-feather="credit-card" class="text-white w-8 h-8"></i>
+                    </div>
 
-        <!-- Trust Note -->
-        <p class="text-sm text-gray-500 mt-6">
-          💡 Flexible options available • Fees are charged per term
-        </p>
+                    <!-- Heading -->
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                        Affordable Fees, Exceptional Value
+                    </h2>
 
-      </div>
-    </div>
+                    <!-- Message -->
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        At <strong>Giant Stride School</strong>, we believe quality education should be
+                        <span class="text-green-600 font-semibold">accessible</span>.
+                        Our fees are carefully structured to remain affordable while delivering
+                        outstanding teaching, modern learning methods, and a nurturing environment.
+                    </p>
 
-  </div>
-</section>
+                    <!-- Call to Action -->
+                    <a href="contact.html"
+                        class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition">
+                        Enquire About Fees
+                        <i data-feather="arrow-right" class="ml-2"></i>
+                    </a>
+
+                    <!-- Trust Note -->
+                    <p class="text-sm text-gray-500 mt-6">
+                        💡 Flexible options available • Fees are charged per term
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 
     <!-- Scholarships -->
@@ -317,23 +325,29 @@
                 </div>
                 <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
                     <h2 class="text-3xl font-bold mb-6 text-gray-800">Scholarship Opportunities</h2>
-                    <p class="text-gray-600 mb-6">At Giant Stride School, we believe in rewarding excellence and supporting families who demonstrate financial need. We offer several scholarship opportunities:</p>
+                    <p class="text-gray-600 mb-6">At Giant Stride School, we believe in rewarding excellence and
+                        supporting families who demonstrate financial need. We offer several scholarship opportunities:
+                    </p>
                     <ul class="space-y-4 text-gray-600">
                         <li class="flex items-start">
                             <i data-feather="award" class="text-orange-500 mr-3 mt-1"></i>
-                            <span><strong>Academic Excellence Scholarship:</strong> For students with outstanding academic records.</span>
+                            <span><strong>Academic Excellence Scholarship:</strong> For students with outstanding
+                                academic records.</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="award" class="text-orange-500 mr-3 mt-1"></i>
-                            <span><strong>Talent-Based Scholarship:</strong> For students demonstrating exceptional talent in sports, arts, or other areas.</span>
+                            <span><strong>Talent-Based Scholarship:</strong> For students demonstrating exceptional
+                                talent in sports, arts, or other areas.</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="award" class="text-orange-500 mr-3 mt-1"></i>
-                            <span><strong>Need-Based Scholarship:</strong> For families who demonstrate financial need.</span>
+                            <span><strong>Need-Based Scholarship:</strong> For families who demonstrate financial
+                                need.</span>
                         </li>
                     </ul>
                     <div class="mt-8">
-                        <a href="contact.html" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition">
+                        <a href="contact.html"
+                            class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition">
                             Contact us for scholarship details
                             <i data-feather="arrow-right" class="ml-2"></i>
                         </a>
@@ -346,28 +360,34 @@
     <!-- Why Choose Us -->
     <section class="py-20 bg-gradient-to-r from-green-50 to-orange-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Why Choose Giant Stride School?</h2>
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Why Choose Giant Stride
+                School?</h2>
             <div class="grid md:grid-cols-3 gap-10">
                 <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
                     <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i data-feather="book-open" class="text-white h-8 w-8"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Holistic Curriculum</h3>
-                    <p class="text-gray-600 text-center">Our curriculum goes beyond academics to develop character, creativity, and critical thinking skills.</p>
+                    <p class="text-gray-600 text-center">Our curriculum goes beyond academics to develop character,
+                        creativity, and critical thinking skills.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i data-feather="users" class="text-white h-8 w-8"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Qualified Teachers</h3>
-                    <p class="text-gray-600 text-center">Our dedicated teachers are highly qualified and passionate about nurturing young minds.</p>
+                    <p class="text-gray-600 text-center">Our dedicated teachers are highly qualified and passionate
+                        about nurturing young minds.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <i data-feather="home" class="text-white h-8 w-8"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-center mb-4 text-gray-800">Safe Environment</h3>
-                    <p class="text-gray-600 text-center">We maintain a secure and nurturing environment where children can thrive.</p>
+                    <p class="text-gray-600 text-center">We maintain a secure and nurturing environment where children
+                        can thrive.</p>
                 </div>
             </div>
         </div>
@@ -380,7 +400,8 @@
             <div class="grid lg:grid-cols-4 gap-10 mb-12">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
-                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education and values for a brighter tomorrow</p>
+                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality
+                        education and values for a brighter tomorrow</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-orange-400 transition">
                             <i data-feather="facebook"></i>
@@ -400,9 +421,12 @@
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
-                        <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a>
+                        </li>
+                        <li><a href="admission.html"
+                                class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -432,21 +456,25 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All
+                    rights reserved.</p>
                 <div class="flex space-x-6">
-                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="#"
+                            class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun
+                                Princeton</u></a></p>
                 </div>
             </div>
         </div>
     </footer>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-<!-- LightGallery -->
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
+    <!-- LightGallery -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

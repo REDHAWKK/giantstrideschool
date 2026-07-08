@@ -16,7 +16,7 @@
 <body class="font-sans bg-gray-50">
   <!-- Navigation -->
   <nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+    <div class="container mx-auto px-6 py-2 flex justify-between items-center">
 
       <!-- Logo -->
       <div class="flex items-center space-x-4">
@@ -28,14 +28,22 @@
       <div class="hidden lg:flex items-center space-x-8">
 
 
-        <a href="index.html" class="hover:text-orange-200 transition">Home</a>
-        <a href="about.html" class="hover:text-orange-200 transition">About</a>
-        <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
-        <a href="news.html" class="hover:text-orange-200 transition">News</a>
-        <a href="https://giantstrideschool.intelps.cloud/login" target="_blank"
-          class="hover:text-orange-200 transition">Portal</a>
+        <a href="index.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+          <i data-feather="home" class="w-4 h-4"></i>
+          <span>Home</span>
+        </a>
 
-        <!-- NEW “More” Dropdown -->
+        <a href="about.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+          <i data-feather="info" class="w-4 h-4"></i>
+          <span>About</span>
+        </a>
+
+        <a href="news.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+          <i data-feather="file-text" class="w-4 h-4"></i>
+          <span>News</span>
+        </a>
+
+        <!-- More Dropdown -->
         <div class="relative">
           <button id="more-btn" class="hover:text-orange-200 transition flex items-center cursor-pointer">
             More
@@ -44,10 +52,16 @@
 
           <div id="more-menu" class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
             <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
+            <a href="gallery.html" class="block px-4 py-2 hover:bg-green-100">Gallery</a>
+            <a href="https://giantstrideschool.intelps.cloud/login" class="block px-4 py-2 hover:bg-green-100">
+              Portal</a>
           </div>
         </div>
 
-        <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
+        <a href="contact.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+          <i data-feather="mail" class="w-4 h-4"></i>
+          <span>Contact</span>
+        </a>
         <a href="admission.html"
           class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
       </div>

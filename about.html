@@ -1,82 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Giant Stride School - Quality Education for Tomorrow's Leaders</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="tailwind.css">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body class="font-sans bg-gray-50">
-<!-- Navigation -->
-<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        
-        <!-- Logo -->
-        <div class="flex items-center space-x-4">
-            <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
-            <span class="text-xl font-bold">Giant Stride School</span>
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
+                <span class="text-xl font-bold">Giant Stride School</span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center space-x-8">
+
+
+                <a href="index.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="home" class="w-4 h-4"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="about.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="info" class="w-4 h-4"></i>
+                    <span>About</span>
+                </a>
+
+                <a href="news.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="file-text" class="w-4 h-4"></i>
+                    <span>News</span>
+                </a>
+
+                <!-- More Dropdown -->
+                <div class="relative">
+                    <button id="more-btn" class="hover:text-orange-200 transition flex items-center cursor-pointer">
+                        More
+                        <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </button>
+
+                    <div id="more-menu" class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
+                        <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-green-100">Gallery</a>
+                        <a href="https://giantstrideschool.intelps.cloud/login"
+                            class="block px-4 py-2 hover:bg-green-100">
+                            Portal</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="mail" class="w-4 h-4"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="admission.html"
+                    class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
+                <i data-feather="menu" class="text-white h-8 w-8"></i>
+            </button>
         </div>
 
-        <!-- Desktop Nav -->
-<div class="hidden lg:flex items-center space-x-8">
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
+            <a href="index.html" class="py-2 border-b">Home</a>
+            <a href="about.html" class="py-2 border-b">About</a>
+            <a href="gallery.html" class="py-2 border-b">Gallery</a>
+            <a href="news.html" class="py-2 border-b">News</a>
+            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
 
+            <!-- Mobile “More” section -->
+            <details class="py-2 border-b">
+                <summary class="font-medium cursor-pointer">More</summary>
+                <div class="ml-4 mt-2 flex flex-col space-y-2">
+                    <a href="team.html" class="hover:text-orange-500">Team</a>
+            </details>
 
-            <a href="index.html" class="hover:text-orange-200 transition">Home</a>
-            <a href="about.html" class="hover:text-orange-200 transition">About</a>
-            <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
-            <a href="news.html" class="hover:text-orange-200 transition">News</a>
-            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="hover:text-orange-200 transition">Portal</a>
+            <a href="contact.html" class="py-2 border-b">Contact</a>
 
-            <!-- NEW “More” Dropdown -->
-<div class="relative">
-  <button id="more-btn"
-    class="hover:text-orange-200 transition flex items-center cursor-pointer">
-    More
-    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
-  </button>
-
-  <div id="more-menu"
-    class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
-    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
-  </div>
-</div>
-            <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
-            <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            <a href="admission.html"
+                class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
+                Admission
+            </a>
         </div>
 
-        <!-- Hamburger Button -->
-        <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
-            <i data-feather="menu" class="text-white h-8 w-8"></i>
-        </button>
-    </div>
-
-<!-- Mobile Dropdown -->
-<div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
-    <a href="index.html" class="py-2 border-b">Home</a>
-    <a href="about.html" class="py-2 border-b">About</a>
-    <a href="gallery.html" class="py-2 border-b">Gallery</a>
-    <a href="news.html" class="py-2 border-b">News</a>
-    <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
-
-    <!-- Mobile “More” section -->
-    <details class="py-2 border-b">
-        <summary class="font-medium cursor-pointer">More</summary>
-        <div class="ml-4 mt-2 flex flex-col space-y-2">
-            <a href="team.html" class="hover:text-orange-500">Team</a>
-    </details>
-
-    <a href="contact.html" class="py-2 border-b">Contact</a>
-
-    <a href="admission.html" class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
-        Admission
-    </a>
-</div>
-
-</nav>
-    <!-- Hero Section -->
+    </nav> <!-- Hero Section -->
     <section class="relative pt-14">
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <img src="images/img13.png" alt="School Building" class="w-full h-96 object-cover">
@@ -84,7 +103,8 @@
             <div data-aos="fade-up">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">About Our School</h1>
                 <div class="text-xl text-white">
-                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span class="text-orange-300">About</span>
+                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span
+                        class="text-orange-300">About</span>
                 </div>
             </div>
         </div>
@@ -94,20 +114,21 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
-<div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-  <div class="w-full max-h-96 overflow-hidden rounded-xl shadow-xl">
-    <img 
-      src="images/img13.png" 
-      alt="School History"
-      class="w-full h-full object-cover"
-    >
-  </div>
-</div>
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <div class="w-full max-h-96 overflow-hidden rounded-xl shadow-xl">
+                        <img src="images/img13.png" alt="School History" class="w-full h-full object-cover">
+                    </div>
+                </div>
                 <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
                     <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Story</h2>
-                    <p class="text-gray-600 mb-4">Founded in September 2018 with five pupils and fifteen staff members, Giant Stride School was built on a clear mission, <b>to become a household name in building the total child</b>.</p>
-                    <p class="text-gray-600 mb-4">By 2019, the school was already competing nationally, earning gold and silver medals at ANMC, multiple top positions at TUMA, and representing Lagos State at the national level of the Mathematics Association of Nigeria.</p>
-                    <p class="text-gray-600">Today, Giant Stride School stands among reputable schools in the country, known for academic excellence, steady growth, and results that speak for themselves.</p>
+                    <p class="text-gray-600 mb-4">Founded in September 2018 with five pupils and fifteen staff members,
+                        Giant Stride School was built on a clear mission, <b>to become a household name in building the
+                            total child</b>.</p>
+                    <p class="text-gray-600 mb-4">By 2019, the school was already competing nationally, earning gold and
+                        silver medals at ANMC, multiple top positions at TUMA, and representing Lagos State at the
+                        national level of the Mathematics Association of Nigeria.</p>
+                    <p class="text-gray-600">Today, Giant Stride School stands among reputable schools in the country,
+                        known for academic excellence, steady growth, and results that speak for themselves.</p>
                 </div>
             </div>
         </div>
@@ -122,14 +143,16 @@
                         <i data-feather="target" class="text-white h-8 w-8"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-gray-800">Our Mission</h3>
-                    <p class="text-gray-600">To build the total child through quality education, discipline, and excellence, while nurturing pupils to reach their full academic and personal potential.</p>
+                    <p class="text-gray-600">To build the total child through quality education, discipline, and
+                        excellence, while nurturing pupils to reach their full academic and personal potential.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-feather="eye" class="text-white h-8 w-8"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-gray-800">Our Vision</h3>
-                    <p class="text-gray-600">To become a household name among great schools in Nigeria, recognized nationally for outstanding results and the development of confident, well-rounded learners.</p>
+                    <p class="text-gray-600">To become a household name among great schools in Nigeria, recognized
+                        nationally for outstanding results and the development of confident, well-rounded learners.</p>
                 </div>
             </div>
         </div>
@@ -138,28 +161,32 @@
     <!-- Our Approach -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Our Educational Approach</h2>
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Our Educational Approach
+            </h2>
             <div class="grid lg:grid-cols-3 gap-8">
                 <div class="p-8 bg-orange-50 rounded-xl" data-aos="fade-up" data-aos-delay="100">
                     <div class="bg-orange-500 w-12 h-12 rounded-full flex items-center justify-center mb-6">
                         <i data-feather="book" class="text-white h-6 w-6"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4 text-orange-600">Holistic Curriculum</h3>
-                    <p class="text-gray-600">We combine the national curriculum with innovative teaching methods and extracurricular activities to ensure all-round development.</p>
+                    <p class="text-gray-600">We combine the national curriculum with innovative teaching methods and
+                        extracurricular activities to ensure all-round development.</p>
                 </div>
                 <div class="p-8 bg-green-50 rounded-xl" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center mb-6">
                         <i data-feather="user" class="text-white h-6 w-6"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4 text-green-600">Child-Centered Learning</h3>
-                    <p class="text-gray-600">Our teaching methods are tailored to each child's learning style, ensuring no child is left behind.</p>
+                    <p class="text-gray-600">Our teaching methods are tailored to each child's learning style, ensuring
+                        no child is left behind.</p>
                 </div>
                 <div class="p-8 bg-orange-50 rounded-xl" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-orange-500 w-12 h-12 rounded-full flex items-center justify-center mb-6">
                         <i data-feather="activity" class="text-white h-6 w-6"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4 text-orange-600">Practical Learning</h3>
-                    <p class="text-gray-600">We emphasize hands-on experiences and real-world applications to make learning engaging and meaningful.</p>
+                    <p class="text-gray-600">We emphasize hands-on experiences and real-world applications to make
+                        learning engaging and meaningful.</p>
                 </div>
             </div>
         </div>
@@ -170,43 +197,58 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Our Facilities</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="100">
                     <img src="http://static.photos/education/640x360/7" alt="Library" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Modern Library</h3>
-                        <p class="text-gray-600">Well-stocked with age-appropriate books to encourage reading and research skills.</p>
+                        <p class="text-gray-600">Well-stocked with age-appropriate books to encourage reading and
+                            research skills.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
-                    <img src="http://static.photos/education/640x360/8" alt="Science Lab" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <img src="http://static.photos/education/640x360/8" alt="Science Lab"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Science Laboratory</h3>
-                        <p class="text-gray-600">Equipped for hands-on science experiments that make learning fun and interactive.</p>
+                        <p class="text-gray-600">Equipped for hands-on science experiments that make learning fun and
+                            interactive.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
-                    <img src="http://static.photos/education/640x360/9" alt="Playground" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <img src="http://static.photos/education/640x360/9" alt="Playground"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Playground</h3>
-                        <p class="text-gray-600">Safe and well-equipped play area for physical development and recreation.</p>
+                        <p class="text-gray-600">Safe and well-equipped play area for physical development and
+                            recreation.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
-                    <img src="http://static.photos/education/640x360/10" alt="Computer Lab" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <img src="http://static.photos/education/640x360/10" alt="Computer Lab"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Computer Lab</h3>
-                        <p class="text-gray-600">Modern computers to introduce students to technology from an early age.</p>
+                        <p class="text-gray-600">Modern computers to introduce students to technology from an early age.
+                        </p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
-                    <img src="http://static.photos/education/640x360/11" alt="Art Room" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <img src="http://static.photos/education/640x360/11" alt="Art Room"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Art & Music Room</h3>
                         <p class="text-gray-600">Creative space for artistic expression and musical development.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
-                    <img src="http://static.photos/education/640x360/12" alt="Cafeteria" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <img src="http://static.photos/education/640x360/12" alt="Cafeteria"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Cafeteria</h3>
                         <p class="text-gray-600">Serving nutritious meals to support children's health and learning.</p>
@@ -220,8 +262,11 @@
     <section class="py-16 bg-gradient-to-r from-orange-500 to-green-500 text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Want to See Our School in Person?</h2>
-            <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Schedule a tour to experience our learning environment first-hand.</p>
-            <a href="contact.html" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition" data-aos="fade-up" data-aos-delay="200">Book a Visit</a>
+            <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Schedule a tour to
+                experience our learning environment first-hand.</p>
+            <a href="contact.html"
+                class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition"
+                data-aos="fade-up" data-aos-delay="200">Book a Visit</a>
         </div>
     </section>
 
@@ -231,9 +276,11 @@
             <div class="grid lg:grid-cols-4 gap-10 mb-12">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
-                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education and values for a brighter tomorrow</p>
+                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality
+                        education and values for a brighter tomorrow</p>
                     <div class="flex space-x-4">
-                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank" class="text-gray-400 hover:text-orange-400 transition">
+                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 transition">
                             <i data-feather="facebook"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-orange-400 transition">
@@ -251,9 +298,12 @@
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
-                        <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a>
+                        </li>
+                        <li><a href="admission.html"
+                                class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -283,9 +333,13 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All
+                    rights reserved.</p>
                 <div class="flex space-x-6">
-                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="https://oriarebun-princeton.vercel.app/" target="_blank" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a
+                            href="https://oriarebun-princeton.vercel.app/" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun
+                                Princeton</u></a></p>
                 </div>
             </div>
         </div>
@@ -296,4 +350,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 </body>
+
 </html>

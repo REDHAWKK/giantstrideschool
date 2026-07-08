@@ -1,89 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Stay updated with the latest news and events at Giant Stride School. Discover our achievements, announcements, and stories of building the total child.">
+    <meta name="description"
+        content="Stay updated with the latest news and events at Giant Stride School. Discover our achievements, announcements, and stories of building the total child.">
     <title>News | Giant Stride School - Quality Education for Tomorrow's Leaders</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="tailwind.css">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body class="font-sans bg-gray-50 " spellcheck="false">
-<!-- Navigation -->
-<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        
-        <!-- Logo -->
-        <div class="flex items-center space-x-4">
-            <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
-            <span class="text-xl font-bold">Giant Stride School</span>
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
+                <span class="text-xl font-bold">Giant Stride School</span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center space-x-8">
+
+
+                <a href="index.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="home" class="w-4 h-4"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="about.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="info" class="w-4 h-4"></i>
+                    <span>About</span>
+                </a>
+
+                <a href="news.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="file-text" class="w-4 h-4"></i>
+                    <span>News</span>
+                </a>
+
+                <!-- More Dropdown -->
+                <div class="relative">
+                    <button id="more-btn" class="hover:text-orange-200 transition flex items-center cursor-pointer">
+                        More
+                        <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </button>
+
+                    <div id="more-menu" class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
+                        <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-green-100">Gallery</a>
+                        <a href="https://giantstrideschool.intelps.cloud/login"
+                            class="block px-4 py-2 hover:bg-green-100">
+                            Portal</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="mail" class="w-4 h-4"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="admission.html"
+                    class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
+                <i data-feather="menu" class="text-white h-8 w-8"></i>
+            </button>
         </div>
 
-        <!-- Desktop Nav -->
-<div class="hidden lg:flex items-center space-x-8">
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
+            <a href="index.html" class="py-2 border-b">Home</a>
+            <a href="about.html" class="py-2 border-b">About</a>
+            <a href="gallery.html" class="py-2 border-b">Gallery</a>
+            <a href="news.html" class="py-2 border-b">News</a>
+            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
 
+            <!-- Mobile “More” section -->
+            <details class="py-2 border-b">
+                <summary class="font-medium cursor-pointer">More</summary>
+                <div class="ml-4 mt-2 flex flex-col space-y-2">
+                    <a href="team.html" class="hover:text-orange-500">Team</a>
+            </details>
 
-            <a href="index.html" class="hover:text-orange-200 transition">Home</a>
-            <a href="about.html" class="hover:text-orange-200 transition">About</a>
-            <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
-            <a href="news.html" class="hover:text-orange-200 transition">News</a>
-            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="hover:text-orange-200 transition">Portal</a>
-            <a href="news.html" id="logout-btn-desktop" class="hover:text-orange-200 transition">LogOut</a>
+            <a href="contact.html" class="py-2 border-b">Contact</a>
 
-            <!-- NEW “More” Dropdown -->
-<div class="relative">
-  <button id="more-btn"
-    class="hover:text-orange-200 transition flex items-center cursor-pointer">
-    More
-    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
-  </button>
-
-  <div id="more-menu"
-    class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
-    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
-  </div>
-</div>
-
-            <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
-            <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            <a href="admission.html"
+                class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
+                Admission
+            </a>
         </div>
 
-        <!-- Hamburger Button -->
-        <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
-            <i data-feather="menu" class="text-white h-8 w-8"></i>
-        </button>
-    </div>
-
-<!-- Mobile Dropdown -->
-<div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
-    <a href="index.html" class="py-2 border-b">Home</a>
-    <a href="about.html" class="py-2 border-b">About</a>
-    <a href="gallery.html" class="py-2 border-b">Gallery</a>
-    <a href="news.html"class="py-2 border-b">News</a>
-    <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
-    <a href="news.html" id="logout-btn-mobile" class="py-2 border-b">LogOut</a>
-
-    <!-- Mobile “More” section -->
-    <details class="py-2 border-b">
-        <summary class="cursor-pointer font-medium">More</summary>
-        <div class="ml-4 mt-2 flex flex-col space-y-2">
-            <a href="team.html" class="hover:text-orange-500">Team</a>
-        </div>
-    </details>
-
-    <a href="contact.html" class="py-2 border-b">Contact</a>
-
-    <a href="admission.html" class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
-        Admission
-    </a>
-</div>
-
-</nav>
-<pre>
-
-</pre>
+    </nav>
     <!-- Hero Section -->
     <section class="relative pt-12">
         <div class="absolute inset-0 bg-black opacity-40"></div>
@@ -92,58 +106,61 @@
             <div data-aos="fade-up">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">News</h1>
                 <div class="text-xl text-white">
-                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span class="text-orange-300">News</span>
+                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span
+                        class="text-orange-300">News</span>
                 </div>
             </div>
         </div>
     </section>
     <!-- News Section -->
-<section class="pt-16 pb-20 bg-light">
-  <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
+    <section class="pt-16 pb-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
 
-<!-- Post Form -->
- <div class="hidden" id="post-box">
-<div class="bg-white shadow-md rounded-lg p-6 mb-8">
-  <h2 class="text-xl font-bold mb-4 text-primary">Post the news, Admin</h2>
-  
-  <!-- Textarea -->
-  <textarea id="post-text" 
-    class="w-full border rounded-lg p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-    placeholder="What's new at Giant Stride?"></textarea>
-  
-  <!-- File Input + Preview -->
-  <div class="mb-4">
-<input type="file" id="post-file" accept="image/*,video/*" class="hidden">
-<button type="button" id="add-file-btn" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold inline-block transition cursor-pointer">
-  Add Media
-</button>
-    <div class="mt-3">
-<div id="file-preview" class="hidden flex flex-wrap gap-2 mt-3"></div>
-    </div>
-  </div>
+            <!-- Post Form -->
+            <div class="hidden" id="post-box">
+                <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+                    <h2 class="text-xl font-bold mb-4 text-primary">Post the news, Admin</h2>
 
-  <!-- Button -->
-  <button id="post-btn" type="button" 
-    class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold inline-block transition cursor-pointer">
-    Post
-  </button>
-</div>
-</div>
+                    <!-- Textarea -->
+                    <textarea id="post-text"
+                        class="w-full border rounded-lg p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                        placeholder="What's new at Giant Stride?"></textarea>
 
-    <!--  News Feed -->
-    <div id="news-feed" class="space-y-6">
-      <!-- Posts will be added dynamically from News.js-->
-    </div>
+                    <!-- File Input + Preview -->
+                    <div class="mb-4">
+                        <input type="file" id="post-file" accept="image/*,video/*" class="hidden">
+                        <button type="button" id="add-file-btn"
+                            class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold inline-block transition cursor-pointer">
+                            Add Media
+                        </button>
+                        <div class="mt-3">
+                            <div id="file-preview" class="hidden flex flex-wrap gap-2 mt-3"></div>
+                        </div>
+                    </div>
 
-  </div>
-</section>
+                    <!-- Button -->
+                    <button id="post-btn" type="button"
+                        class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold inline-block transition cursor-pointer">
+                        Post
+                    </button>
+                </div>
+            </div>
+
+            <!--  News Feed -->
+            <div id="news-feed" class="space-y-6">
+                <!-- Posts will be added dynamically from News.js-->
+            </div>
+
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-10 mb-12">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
-                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education and values for a brighter tomorrow</p>
+                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality
+                        education and values for a brighter tomorrow</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-orange-400 transition">
                             <i data-feather="facebook"></i>
@@ -163,9 +180,12 @@
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
-                        <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a>
+                        </li>
+                        <li><a href="admission.html"
+                                class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -195,47 +215,50 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All
+                    rights reserved.</p>
                 <div class="flex space-x-6">
-                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="#" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="#"
+                            class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun
+                                Princeton</u></a></p>
                 </div>
             </div>
         </div>
     </footer>
 
 
-<!-- LightGallery -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css">
+    <!-- LightGallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css">
 
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/video/lg-video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/video/lg-video.min.js"></script>
 
-<!-- Login Modal -->
-<div
-  id="login-modal"
-  class="fixed inset-0 flex items-center justify-center hidden z-50
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 flex items-center justify-center hidden z-50
          backdrop-blur-md bg-black/30">
-  <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
-    <h2 class="text-lg font-bold mb-4">Login Required</h2>
-    <button id="google-login" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold inline-block transition cursor-pointer">
-      Continue with Google
-    </button>
-  </div>
-</div>
+        <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
+            <h2 class="text-lg font-bold mb-4">Login Required</h2>
+            <button id="google-login"
+                class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold inline-block transition cursor-pointer">
+                Continue with Google
+            </button>
+        </div>
+    </div>
 
     <!-- Firebase v8 (namespaced) -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- Your script -->
-<script src="news.js"></script>
-   <script src="script.js"></script>
+    <!-- Your script -->
+    <script src="news.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

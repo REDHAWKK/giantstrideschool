@@ -1,83 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet Our Team | Giant Stride School - Quality Education for Tomorrow's Leaders</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="tailwind.css">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body class="font-sans bg-gray-50">
-<!-- Navigation -->
-<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        
-        <!-- Logo -->
-        <div class="flex items-center space-x-4">
-            <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
-            <span class="text-xl font-bold">Giant Stride School</span>
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
+                <span class="text-xl font-bold">Giant Stride School</span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center space-x-8">
+
+
+                <a href="index.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="home" class="w-4 h-4"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="about.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="info" class="w-4 h-4"></i>
+                    <span>About</span>
+                </a>
+
+                <a href="news.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="file-text" class="w-4 h-4"></i>
+                    <span>News</span>
+                </a>
+
+                <!-- More Dropdown -->
+                <div class="relative">
+                    <button id="more-btn" class="hover:text-orange-200 transition flex items-center cursor-pointer">
+                        More
+                        <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </button>
+
+                    <div id="more-menu" class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
+                        <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-green-100">Gallery</a>
+                        <a href="https://giantstrideschool.intelps.cloud/login"
+                            class="block px-4 py-2 hover:bg-green-100">
+                            Portal</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="mail" class="w-4 h-4"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="admission.html"
+                    class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
+                <i data-feather="menu" class="text-white h-8 w-8"></i>
+            </button>
         </div>
 
-        <!-- Desktop Nav -->
-<div class="hidden lg:flex items-center space-x-8">
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
+            <a href="index.html" class="py-2 border-b">Home</a>
+            <a href="about.html" class="py-2 border-b">About</a>
+            <a href="gallery.html" class="py-2 border-b">Gallery</a>
+            <a href="news.html" class="py-2 border-b">News</a>
+            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
 
+            <!-- Mobile “More” section -->
+            <details class="py-2 border-b">
+                <summary class="font-medium cursor-pointer">More</summary>
+                <div class="ml-4 mt-2 flex flex-col space-y-2">
+                    <a href="team.html" class="hover:text-orange-500">Team</a>
+            </details>
 
-            <a href="index.html" class="hover:text-orange-200 transition">Home</a>
-            <a href="about.html" class="hover:text-orange-200 transition">About</a>
-            <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
-            <a href="news.html" class="hover:text-orange-200 transition">News</a>
-            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="hover:text-orange-200 transition">Portal</a>
+            <a href="contact.html" class="py-2 border-b">Contact</a>
 
-            <!-- NEW “More” Dropdown -->
-<div class="relative">
-  <button id="more-btn"
-    class="hover:text-orange-200 transition flex items-center cursor-pointer">
-    More
-    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
-  </button>
-
-  <div id="more-menu"
-    class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
-    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Our Team</a>
-  </div>
-</div>
-
-            <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
-            <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            <a href="admission.html"
+                class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
+                Admission
+            </a>
         </div>
 
-        <!-- Hamburger Button -->
-        <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
-            <i data-feather="menu" class="text-white h-8 w-8"></i>
-        </button>
-    </div>
-
-<!-- Mobile Dropdown -->
-<div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
-    <a href="index.html" class="py-2 border-b">Home</a>
-    <a href="about.html" class="py-2 border-b">About</a>
-    <a href="gallery.html" class="py-2 border-b">Gallery</a>
-    <a href="news.html" class="py-2 border-b">News</a>
-    <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
-
-    <!-- Mobile “More” section -->
-    <details class="py-2 border-b">
-        <summary class="font-medium cursor-pointer">More</summary>
-        <div class="ml-4 mt-2 flex flex-col space-y-2">
-            <a href="team.html" class="hover:text-orange-500">Team</a>
-        </div>
-    </details>
-
-    <a href="contact.html" class="py-2 border-b">Contact</a>
-
-    <a href="admission.html" class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
-        Admission
-    </a>
-</div>
-
-</nav>
+    </nav>
     <!-- Hero Section -->
     <section class="relative pt-14">
         <div class="absolute inset-0 bg-black opacity-40"></div>
@@ -86,48 +104,51 @@
             <div data-aos="fade-up">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Meet Our Team</h1>
                 <div class="text-xl text-white">
-                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span class="text-orange-300">Our Team</span>
+                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span class="text-orange-300">Our
+                        Team</span>
                 </div>
             </div>
         </div>
     </section>
-<!-- Proprietress Message -->
-<section class="pt-8 pb-8 bg-orange-50 ">
-  <div class="container mx-auto px-6">
-    <div class="flex flex-col md:flex-row items-center gap-6 max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6" data-aos="fade-up">
+    <!-- Proprietress Message -->
+    <section class="pt-8 pb-8 bg-orange-50 ">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-6 max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6"
+                data-aos="fade-up">
 
-      <!-- Image -->
-      <div class="w-28 h-28 flex-shrink-0 rounded-full overflow-hidden border-4 border-orange-500">
-        <img src="images/img17.png" alt="Proprietress" class="w-full h-full object-cover">
-      </div>
+                <!-- Image -->
+                <div class="w-28 h-28 flex-shrink-0 rounded-full overflow-hidden border-4 border-orange-500">
+                    <img src="images/img17.png" alt="Proprietress" class="w-full h-full object-cover">
+                </div>
 
-      <!-- Content -->
-      <div class="text-center md:text-left">
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-          A Word from Our Proprietress
-        </h3>
-        <p class="text-gray-600 text-sm leading-relaxed">
-          “I have complete trust in the incredible team that stands with me at Giant Stride School.
-          Each member is committed, passionate, and united by one goal — to nurture every child with care,
-          excellence, and strong values. Together, we leave a lasting impression.”
-        </p>
-        <p class="mt-3 text-orange-500 font-medium text-sm">
-          — Mrs. Moses Adejoke
-        </p>
-      </div>
+                <!-- Content -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                        A Word from Our Proprietress
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        “I have complete trust in the incredible team that stands with me at Giant Stride School.
+                        Each member is committed, passionate, and united by one goal — to nurture every child with care,
+                        excellence, and strong values. Together, we leave a lasting impression.”
+                    </p>
+                    <p class="mt-3 text-orange-500 font-medium text-sm">
+                        — Mrs. Moses Adejoke
+                    </p>
+                </div>
 
-    </div>
-  </div>
-</section>
+            </div>
+        </div>
+    </section>
 
     <!-- Management Team -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">School Management</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Our dedicated leadership team works tirelessly to ensure our school maintains the highest standards of education and care.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our dedicated leadership team works tirelessly to ensure our
+                    school maintains the highest standards of education and care.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
                     <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-orange-500">
@@ -135,25 +156,30 @@
                     </div>
                     <h3 class="text-xl font-semibold text-center mb-2 text-gray-800">Mrs. Moses Adejoke</h3>
                     <p class="text-orange-500 text-center mb-4">Proprietress</p>
-                    <p class="text-gray-600 text-center">With over 20 years in education, Mrs. Moses founded Giant Stride School with a vision to raise a total child and leave a lasting impression.</p>
+                    <p class="text-gray-600 text-center">With over 20 years in education, Mrs. Moses founded Giant
+                        Stride School with a vision to raise a total child and leave a lasting impression.</p>
                 </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-orange-500">
                         <img src="images/img14.png" alt="Head of School" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-xl font-semibold text-center mb-2 text-gray-800">Mrs Adeyemi Abiola</h3>
                     <p class="text-orange-500 text-center mb-4">Primary School Head</p>
-                    <p class="text-gray-600 text-center">A seasoned educator with a passion for innovative teaching methods and child development.</p>
+                    <p class="text-gray-600 text-center">A seasoned educator with a passion for innovative teaching
+                        methods and child development.</p>
                 </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-orange-500">
                         <img src="images/img19.jpg" alt="Administrator" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-xl font-semibold text-center mb-2 text-gray-800">Mr. David Issa</h3>
                     <p class="text-orange-500 text-center mb-4">School Administrator</p>
-                    <p class="text-gray-600 text-center">Ensures the smooth operation of all school activities with efficiency and care.</p>
+                    <p class="text-gray-600 text-center">Ensures the smooth operation of all school activities with
+                        efficiency and care.</p>
                 </div>
             </div>
         </div>
@@ -164,9 +190,10 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Teaching Staff</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Highly qualified and passionate teachers who make learning engaging and meaningful.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Highly qualified and passionate teachers who make learning
+                    engaging and meaningful.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
@@ -174,7 +201,8 @@
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mrs Ewedairo Folake</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Head Teacher, Nursery</p>
-                    <p class="text-gray-600 text-center text-sm">Takes on the Nursery class and ensures a nurturing environment for young learners.</p>
+                    <p class="text-gray-600 text-center text-sm">Takes on the Nursery class and ensures a nurturing
+                        environment for young learners.</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
@@ -182,55 +210,68 @@
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mrs Alabi Deborah</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Nursery Teacher</p>
-                    <p class="text-gray-600 text-center text-sm">Specializes in early childhood education and development.</p>
+                    <p class="text-gray-600 text-center text-sm">Specializes in early childhood education and
+                        development.</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://stat.photos/people/320x240/10" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/10" alt="Teacher"
+                            class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr. Tunde Ojo</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Primary 1 Class Teacher</p>
-                    <p class="text-gray-600 text-center text-sm">Expert in foundational literacy and numeracy skills.</p>
+                    <p class="text-gray-600 text-center text-sm">Expert in foundational literacy and numeracy skills.
+                    </p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://stat.photos/people/320x240/11" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/11" alt="Teacher"
+                            class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Miss Amina Yusuf</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Primary 3 Class Teacher</p>
                     <p class="text-gray-600 text-center text-sm">Passionate about science and mathematics education.</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://stat.photos/people/320x240/12" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/12" alt="Teacher"
+                            class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mrs. Grace Okoro</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Primary 5 Class Teacher</p>
-                    <p class="text-gray-600 text-center text-sm">Specializes in preparing students for secondary school transition.</p>
+                    <p class="text-gray-600 text-center text-sm">Specializes in preparing students for secondary school
+                        transition.</p>
                 </div>
-                
+
                 <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
                         <img src="images/img18.png" alt="Teacher" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr Oyeneye A.</h3>
                     <p class="text-green-500 text-center text-sm mb-3">ICT & STEM Teacher</p>
-                    <p class="text-gray-600 text-center text-sm">Brings technology and innovation into the classroom.</p>
+                    <p class="text-gray-600 text-center text-sm">Brings technology and innovation into the classroom.
+                    </p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://stat.photos/people/320x240/14" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/14" alt="Teacher"
+                            class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mrs. Funmi Adegoke</h3>
                     <p class="text-green-500 text-center text-sm mb-3">Creative Arts Teacher</p>
                     <p class="text-gray-600 text-center text-sm">Nurtures creativity through art, music and drama.</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
                         <img src="images/img20.png" alt="Teacher" class="w-full h-full object-cover">
                     </div>
@@ -238,10 +279,12 @@
                     <p class="text-green-500 text-center text-sm mb-3">Physical Education</p>
                     <p class="text-gray-600 text-center text-sm">Promotes physical fitness and sportsmanship.</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500">
-                        <img src="http://stat.photos/people/320x240/16" alt="Teacher" class="w-full h-full object-cover">
+                        <img src="http://stat.photos/people/320x240/16" alt="Teacher"
+                            class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Miss Chinwe Okoli</h3>
                     <p class="text-green-500 text-center text-sm mb-3">French & Language Arts</p>
@@ -256,9 +299,10 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Support Staff</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Our dedicated team that ensures the school runs smoothly behind the scenes.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our dedicated team that ensures the school runs smoothly
+                    behind the scenes.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
                     <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-orange-500">
@@ -267,24 +311,27 @@
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr. Sunday Okonkwo</h3>
                     <p class="text-orange-500 text-center text-sm mb-3">School Nurse</p>
                 </div>
-                
-                <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-orange-500">
                         <img src="http://stat.photos/people/320x240/18" alt="Staff" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mrs. Ronke Adebayo</h3>
                     <p class="text-orange-500 text-center text-sm mb-3">School Secretary</p>
                 </div>
-                
-                <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-orange-500">
                         <img src="http://stat.photos/people/320x240/19" alt="Staff" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-semibold text-center mb-1 text-gray-800">Mr. Ibrahim Bello</h3>
                     <p class="text-orange-500 text-center text-sm mb-3">Facility Manager</p>
                 </div>
-                
-                <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="bg-orange-50 p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-orange-500">
                         <img src="http://stat.photos/people/320x240/20" alt="Staff" class="w-full h-full object-cover">
                     </div>
@@ -299,8 +346,11 @@
     <section class="py-16 bg-gradient-to-r from-orange-500 to-green-500 text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Want to Join Our Team?</h2>
-            <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">We're always looking for passionate educators to join our team.</p>
-            <a href="contact.html" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition" data-aos="fade-up" data-aos-delay="200">Contact Us</a>
+            <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">We're always looking for
+                passionate educators to join our team.</p>
+            <a href="contact.html"
+                class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition"
+                data-aos="fade-up" data-aos-delay="200">Contact Us</a>
         </div>
     </section>
 
@@ -310,9 +360,11 @@
             <div class="grid lg:grid-cols-4 gap-10 mb-12">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
-                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education and values for a brighter tomorrow</p>
+                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality
+                        education and values for a brighter tomorrow</p>
                     <div class="flex space-x-4">
-                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank" class="text-gray-400 hover:text-orange-400 transition">
+                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 transition">
                             <i data-feather="facebook"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-orange-400 transition">
@@ -330,9 +382,12 @@
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
-                        <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a>
+                        </li>
+                        <li><a href="admission.html"
+                                class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -362,9 +417,13 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All
+                    rights reserved.</p>
                 <div class="flex space-x-6">
-                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="https://oriarebun-princeton.vercel.app/" target="_blank" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a
+                            href="https://oriarebun-princeton.vercel.app/" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun
+                                Princeton</u></a></p>
                 </div>
             </div>
         </div>
@@ -374,4 +433,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 </body>
+
 </html>

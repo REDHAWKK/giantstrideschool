@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with Giant Stride School. We're here to answer your questions and provide more information about our quality education programs.">
+    <meta name="description"
+        content="Get in touch with Giant Stride School. We're here to answer your questions and provide more information about our quality education programs.">
     <title>Contact Us | Giant Stride School - Quality Education for Tomorrow's Leaders</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="tailwind.css">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body class="font-sans bg-gray-50">
-<!-- Navigation -->
-<nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        
-        <!-- Logo -->
-        <div class="flex items-center space-x-4">
-            <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
-            <span class="text-xl font-bold">Giant Stride School</span>
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-orange-500 to-green-500 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <img src="images/logo.png" alt="School Logo" class="h-12 rounded-full border-2 border-white">
+                <span class="text-xl font-bold">Giant Stride School</span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center space-x-8">
+
+
+                <a href="index.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="home" class="w-4 h-4"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="about.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="info" class="w-4 h-4"></i>
+                    <span>About</span>
+                </a>
+
+                <a href="news.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="file-text" class="w-4 h-4"></i>
+                    <span>News</span>
+                </a>
+
+                <!-- More Dropdown -->
+                <div class="relative">
+                    <button id="more-btn" class="hover:text-orange-200 transition flex items-center cursor-pointer">
+                        More
+                        <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </button>
+
+                    <div id="more-menu" class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
+                        <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-green-100">Gallery</a>
+                        <a href="https://giantstrideschool.intelps.cloud/login"
+                            class="block px-4 py-2 hover:bg-green-100">
+                            Portal</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="flex items-center gap-2 hover:text-orange-200 transition">
+                    <i data-feather="mail" class="w-4 h-4"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="admission.html"
+                    class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
+                <i data-feather="menu" class="text-white h-8 w-8"></i>
+            </button>
         </div>
 
-        <!-- Desktop Nav -->
-<div class="hidden lg:flex items-center space-x-8">
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
+            <a href="index.html" class="py-2 border-b">Home</a>
+            <a href="about.html" class="py-2 border-b">About</a>
+            <a href="gallery.html" class="py-2 border-b">Gallery</a>
+            <a href="news.html" class="py-2 border-b">News</a>
+            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
 
+            <!-- Mobile “More” section -->
+            <details class="py-2 border-b">
+                <summary class="font-medium cursor-pointer">More</summary>
+                <div class="ml-4 mt-2 flex flex-col space-y-2">
+                    <a href="team.html" class="hover:text-orange-500">Team</a>
+            </details>
 
-            <a href="index.html" class="hover:text-orange-200 transition">Home</a>
-            <a href="about.html" class="hover:text-orange-200 transition">About</a>
-            <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
-            <a href="news.html" class="hover:text-orange-200 transition">News</a>
-            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="hover:text-orange-200 transition">Portal</a>
+            <a href="contact.html" class="py-2 border-b">Contact</a>
 
-            <!-- NEW “More” Dropdown -->
-<div class="relative">
-  <button id="more-btn"
-    class="hover:text-orange-200 transition flex items-center cursor-pointer">
-    More
-    <i data-feather="chevron-down" class="ml-1 h-4 w-4"></i>
-  </button>
-
-  <div id="more-menu"
-    class="absolute left-0 mt-2 bg-white text-green-700 rounded shadow-lg hidden">
-    <a href="team.html" class="block px-4 py-2 hover:bg-green-100">Team</a>
-  </div>
-</div>
-
-            <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
-            <a href="admission.html" class="bg-white text-green-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Admission</a>
+            <a href="admission.html"
+                class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
+                Admission
+            </a>
         </div>
 
-        <!-- Hamburger Button -->
-        <button id="menu-btn" class="lg:hidden focus:outline-none cursor-pointer">
-            <i data-feather="menu" class="text-white h-8 w-8"></i>
-        </button>
-    </div>
-
-<!-- Mobile Dropdown -->
-<div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
-    <a href="index.html" class="py-2 border-b">Home</a>
-    <a href="about.html" class="py-2 border-b">About</a>
-    <a href="gallery.html" class="py-2 border-b">Gallery</a>
-    <a href="news.html" class="py-2 border-b">News</a>
-    <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
-
-    <!-- Mobile “More” section -->
-    <details class="py-2 border-b">
-        <summary class="font-medium cursor-pointer">More</summary>
-        <div class="ml-4 mt-2 flex flex-col space-y-2">
-            <a href="team.html" class="hover:text-orange-500">Team</a>
-    </details>
-
-    <a href="contact.html" class="py-2 border-b">Contact</a>
-
-    <a href="admission.html" class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
-        Admission
-    </a>
-</div>
-
-</nav>
+    </nav>
     <!-- Hero Section -->
     <section class="relative pt-14">
         <div class="absolute inset-0 bg-black opacity-40"></div>
@@ -86,7 +106,8 @@
             <div data-aos="fade-up">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
                 <div class="text-xl text-white">
-                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span class="text-orange-300">Contact</span>
+                    <a href="index.html" class="hover:text-orange-300">Home</a> / <span
+                        class="text-orange-300">Contact</span>
                 </div>
             </div>
         </div>
@@ -102,7 +123,8 @@
                         <i data-feather="map-pin" class="text-orange-500 h-8 w-8"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">Our Location</h3>
-                    <p class="text-gray-600">16 Fashina Street, off Ajibode Rd<br>Isorosi Ijako, <br> Ogun State, Nigeria</p>
+                    <p class="text-gray-600">16 Fashina Street, off Ajibode Rd<br>Isorosi Ijako, <br> Ogun State,
+                        Nigeria</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
@@ -130,32 +152,38 @@
                 <div class="lg:w-1/2" data-aos="fade-right">
                     <h3 class="text-2xl font-bold mb-6 text-gray-800">Our Location</h3>
                     <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
-                        <iframe class="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6117570737327!2d3.379014414770804!3d6.454636995341004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2b8f0f0f0f%3A0xf0f0f0f0f0f0f0f!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1621234567890!5m2!1sen!2sng" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe class="w-full h-96"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6117570737327!2d3.379014414770804!3d6.454636995341004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2b8f0f0f0f%3A0xf0f0f0f0f0f0f0f!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1621234567890!5m2!1sen!2sng"
+                            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                            tabindex="0"></iframe>
                     </div>
                 </div>
                 <div class="lg:w-1/2" data-aos="fade-left">
                     <h3 class="text-2xl font-bold mb-6 text-gray-800">Send Us a Message</h3>
-<form 
-  action="https://submit-form.com/XpEhGQSfg"
-  method="POST"
-  class="bg-gray-50 p-8 rounded-xl shadow-lg space-y-6"
-  id="contact-form"
->
+                    <form action="https://submit-form.com/XpEhGQSfg" method="POST"
+                        class="bg-gray-50 p-8 rounded-xl shadow-lg space-y-6" id="contact-form">
                         <div class="mb-6">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                            <input type="text" id="name" name="Full-Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="oriarebun princeton">
+                            <input type="text" id="name" name="Full-Name"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                placeholder="oriarebun princeton">
                         </div>
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" id="email" name="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="prince@example.com">
+                            <input type="email" id="email" name="Email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                placeholder="prince@example.com">
                         </div>
                         <div class="mb-6">
                             <label for="phone" class="block text-gray-700 font-medium mb-2">Whatsapp Number</label>
-                            <input type="tel" id="phone" name="Whatsapp-Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="+234 123 456 7890">
+                            <input type="tel" id="phone" name="Whatsapp-Number"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                placeholder="+234 123 456 7890">
                         </div>
                         <div class="mb-6">
                             <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                            <select id="subject" name="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                            <select id="subject" name="Subject"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                                 <option value="">Select a subject</option>
                                 <option value="admission">Admission Inquiry</option>
                                 <option value="visit">Schedule a Visit</option>
@@ -165,9 +193,13 @@
                         </div>
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea id="message" name="Message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Your message here..."></textarea>
+                            <textarea id="message" name="Message" rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                placeholder="Your message here..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition">Send Message</button>
+                        <button type="submit"
+                            class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition">Send
+                            Message</button>
                     </form>
                 </div>
             </div>
@@ -177,37 +209,47 @@
     <!-- FAQs -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Frequently Asked Questions</h2>
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Frequently Asked Questions
+            </h2>
             <div class="max-w-3xl mx-auto space-y-6">
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up">
-                    <button class=" faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
+                    <button
+                        class=" faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
                         <span class="text-lg font-medium text-gray-800">What are the school hours?</span>
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
                     <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600">Our regular school hours are from 8:00 AM to 5:00 PM for all classes.</p>
+                        <p class="text-gray-600">Our regular school hours are from 8:00 AM to 5:00 PM for all classes.
+                        </p>
                     </div>
                 </div>
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <button class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
+                    <button
+                        class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
                         <span class="text-lg font-medium text-gray-800">What is the admission process?</span>
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
                     <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600">Our admission process includes:<br>1. Fill and submit the online application form<br>2. Entrance assessment (for certain classes)<br>3. Interview with parents and child<br>4. Payment of fees upon acceptance</p>
+                        <p class="text-gray-600">Our admission process includes:<br>1. Fill and submit the online
+                            application form<br>2. Entrance assessment (for certain classes)<br>3. Interview with
+                            parents and child<br>4. Payment of fees upon acceptance</p>
                     </div>
                 </div>
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <button class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
-                        <span class="text-lg font-medium text-gray-800">What extracurricular activities do you offer?</span>
+                    <button
+                        class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
+                        <span class="text-lg font-medium text-gray-800">What extracurricular activities do you
+                            offer?</span>
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
                     <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600">We offer a wide range of extracurricular activities including football, basketball, swimming, chess club, music, drama, coding club, art, and more.</p>
+                        <p class="text-gray-600">We offer a wide range of extracurricular activities including football,
+                            basketball, swimming, chess club, music, drama, coding club, art, and more.</p>
                     </div>
                 </div>
                 <div class="border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <button class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
+                    <button
+                        class="faq-question cursor-pointer w-full flex justify-between items-center p-6 focus:outline-none">
                         <span class="text-lg font-medium text-gray-800">Do you provide transportation services?</span>
                         <i data-feather="chevron-down" class="text-orange-500 h-6 w-6"></i>
                     </button>
@@ -223,8 +265,11 @@
     <section class="py-16 bg-gradient-to-r from-orange-500 to-green-500 text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Ready to Visit Our School?</h2>
-            <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Schedule a tour to see our facilities and meet our team.</p>
-            <a href="#contact-form" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition" data-aos="fade-up" data-aos-delay="200">Schedule a Visit</a>
+            <p class="text-xl max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">Schedule a tour to see
+                our facilities and meet our team.</p>
+            <a href="#contact-form"
+                class="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold inline-block transition"
+                data-aos="fade-up" data-aos-delay="200">Schedule a Visit</a>
         </div>
     </section>
 
@@ -234,9 +279,11 @@
             <div class="grid md:grid-cols-4 gap-10 mb-12">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Giant Stride School</h3>
-                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality education and values for a brighter tomorrow</p>
+                    <p class="text-gray-400 mb-4">Leaving a lasting impression and nurturing young minds with quality
+                        education and values for a brighter tomorrow</p>
                     <div class="flex space-x-4">
-                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank" class="text-gray-400 hover:text-orange-400 transition">
+                        <a href="https://web.facebook.com/giantstrideschool/?_rdc=1&_rdr#" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 transition">
                             <i data-feather="facebook"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-orange-400 transition">
@@ -254,9 +301,12 @@
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
-                        <li><a href="admission.html" class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-400 transition">About Us</a>
+                        </li>
+                        <li><a href="admission.html"
+                                class="text-gray-400 hover:text-orange-400 transition">Admission</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-400 transition">Gallery</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -286,9 +336,13 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="year"></span> Giant Stride School. All
+                    rights reserved.</p>
                 <div class="flex space-x-6">
-                   <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a href="https://oriarebun-princeton.vercel.app/" target="_blank" class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun Princeton</u></a></p>
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0"> Website Produced by <a
+                            href="https://oriarebun-princeton.vercel.app/" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 text-sm transition"><u>Oriarebun
+                                Princeton</u></a></p>
                 </div>
             </div>
         </div>
@@ -296,5 +350,7 @@
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script></body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</body>
+
 </html>
