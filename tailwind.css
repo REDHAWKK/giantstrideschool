@@ -1278,6 +1278,20 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+#mobile-menu {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height .40s ease, opacity .30s ease, transform .40s ease;
+  display: flex;
+  flex-direction: column;
+}
+#mobile-menu.open {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
 @keyframes fadeIn {
   from {
     opacity: 0;

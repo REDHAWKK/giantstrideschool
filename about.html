@@ -72,22 +72,37 @@
         </div>
 
         <!-- Mobile Dropdown -->
-        <div id="mobile-menu"
-            class="hidden flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
-            <a href="index.html" class="py-2 border-b">Home</a>
-            <a href="about.html" class="py-2 border-b">About</a>
-            <a href="gallery.html" class="py-2 border-b">Gallery</a>
-            <a href="news.html" class="py-2 border-b">News</a>
-            <a href="https://giantstrideschool.intelps.cloud/login" target="_blank" class="py-2 border-b">Portal</a>
+        <div id="mobile-menu" class="flex flex-col space-y-2 bg-white text-green-700 px-6 pb-4 shadow-md lg:hidden">
+            <a href="index.html" class="flex items-center gap-2 py-2 border-b">
+                <i data-feather="home" class="w-4 h-4"></i>
+                <span>Home</span></a>
+            <a href="about.html" class="flex items-center gap-2 py-2 border-b">
+                <i data-feather="info" class="w-4 h-4"></i>
+                <span>About</span></a>
+            <a href="news.html" class="flex items-center gap-2 py-2 border-b">
+                <i data-feather="file-text" class="w-4 h-4"></i>
+                <span>News</span></a>
 
             <!-- Mobile “More” section -->
             <details class="py-2 border-b">
                 <summary class="font-medium cursor-pointer">More</summary>
                 <div class="ml-4 mt-2 flex flex-col space-y-2">
-                    <a href="team.html" class="hover:text-orange-500">Team</a>
+                    <a href="team.html" class="flex items-center gap-2 hover:text-orange-500">
+                        <i data-feather="users" class="w-4 h-4"></i>
+                        <span>Team</span></a>
+                    <a href="gallery.html" class="flex items-center gap-2 hover:text-orange-500">
+                        <i data-feather="image" class="w-4 h-4"></i>
+                        <span>Gallery</span></a>
+                    <a href="https://giantstrideschool.intelps.cloud/login"
+                        class="flex items-center gap-2 hover:text-orange-500">
+                        <i data-feather="lock" class="w-4 h-4"></i>
+                        <span>Portal</span></a>
+                </div>
             </details>
 
-            <a href="contact.html" class="py-2 border-b">Contact</a>
+            <a href="contact.html" class="flex items-center gap-2 py-2 border-b">
+                <i data-feather="mail" class="w-4 h-4"></i>
+                <span>Contact</span></a>
 
             <a href="admission.html"
                 class="mt-2 text-center bg-green-600 text-white rounded-full py-2 font-semibold hover:bg-green-700">
